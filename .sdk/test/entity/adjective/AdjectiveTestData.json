@@ -1,0 +1,14 @@
+{
+  "existing": {
+    "adjective": {
+      "ADJECTIVE00": {},
+      "ADJECTIVE01": {},
+      "ADJECTIVE02": {}
+    }
+  },
+  "new": {
+    "adjective": {
+      "adjective_ref01": {}
+    }
+  }
+}

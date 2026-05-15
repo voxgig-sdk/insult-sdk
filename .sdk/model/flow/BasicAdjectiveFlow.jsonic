@@ -1,0 +1,28 @@
+# BasicAdjectiveFlow
+
+main: kit: flow: BasicAdjectiveFlow:
+{
+  entity: "adjective",
+  kind: "basic",
+  name: "BasicAdjectiveFlow",
+  step: [
+    {
+      input: {
+        ref: "adjective_ref01",
+        srcdatavar: "adjective_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-adjective_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAdjectiveFlow"
+}

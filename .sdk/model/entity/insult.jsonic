@@ -1,0 +1,70 @@
+# Entity: insult
+
+main: kit: entity: insult: {
+
+  alias: field: {}
+
+  name: "insult"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "en"
+                kind: "query"
+                name: "lang"
+                orig: "lang"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "plural"
+                orig: "plural"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "template"
+                orig: "template"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "who"
+                orig: "who"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/insult"
+          parts: [
+            "insult"
+          ]
+          select: {
+            exist: [
+              "lang"
+              "plural"
+              "template"
+              "who"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

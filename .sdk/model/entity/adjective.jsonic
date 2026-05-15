@@ -1,0 +1,46 @@
+# Entity: adjective
+
+main: kit: entity: adjective: {
+
+  alias: field: {}
+
+  name: "adjective"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "en"
+                kind: "query"
+                name: "lang"
+                orig: "lang"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/adjective"
+          parts: [
+            "adjective"
+          ]
+          select: {
+            exist: [
+              "lang"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

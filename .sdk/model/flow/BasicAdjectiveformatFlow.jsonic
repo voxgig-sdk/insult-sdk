@@ -1,0 +1,33 @@
+# BasicAdjectiveformatFlow
+
+main: kit: flow: BasicAdjectiveformatFlow:
+{
+  entity: "adjectiveformat",
+  kind: "basic",
+  name: "BasicAdjectiveformatFlow",
+  step: [
+    {
+      input: {
+        ref: "adjectiveformat_ref01",
+        srcdatavar: "adjectiveformat_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        format: "format01",
+        id: "adjectiveformat01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-adjectiveformat_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAdjectiveformatFlow"
+}

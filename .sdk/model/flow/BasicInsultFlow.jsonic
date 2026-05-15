@@ -1,0 +1,28 @@
+# BasicInsultFlow
+
+main: kit: flow: BasicInsultFlow:
+{
+  entity: "insult",
+  kind: "basic",
+  name: "BasicInsultFlow",
+  step: [
+    {
+      input: {
+        ref: "insult_ref01",
+        srcdatavar: "insult_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-insult_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInsultFlow"
+}

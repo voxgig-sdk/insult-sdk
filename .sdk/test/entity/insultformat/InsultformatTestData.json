@@ -1,0 +1,23 @@
+{
+  "existing": {
+    "insultformat": {
+      "INSULTFORMAT00": {
+        "format": "FORMAT01",
+        "lang": "LANG01"
+      },
+      "INSULTFORMAT01": {
+        "format": "FORMAT01",
+        "lang": "LANG01"
+      },
+      "INSULTFORMAT02": {
+        "format": "FORMAT01",
+        "lang": "LANG01"
+      }
+    }
+  },
+  "new": {
+    "insultformat": {
+      "insultformat_ref01": {}
+    }
+  }
+}

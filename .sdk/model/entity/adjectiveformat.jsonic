@@ -1,0 +1,92 @@
+# Entity: adjectiveformat
+
+main: kit: entity: adjectiveformat: {
+
+  alias: field: {}
+
+  name: "adjectiveformat"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "format"
+                orig: "format"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                example: "en"
+                kind: "query"
+                name: "lang"
+                orig: "lang"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/adjective.{format}"
+          parts: [
+            "adjective.{format}"
+          ]
+          select: {
+            exist: [
+              "format"
+              "lang"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "format"
+                orig: "format"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "param"
+                name: "lang"
+                orig: "lang"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/{lang}/adjective.{format}"
+          parts: [
+            "{lang}"
+            "adjective.{format}"
+          ]
+          select: {
+            exist: [
+              "format"
+              "lang"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

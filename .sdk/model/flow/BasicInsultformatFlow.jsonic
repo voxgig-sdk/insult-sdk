@@ -1,0 +1,33 @@
+# BasicInsultformatFlow
+
+main: kit: flow: BasicInsultformatFlow:
+{
+  entity: "insultformat",
+  kind: "basic",
+  name: "BasicInsultformatFlow",
+  step: [
+    {
+      input: {
+        ref: "insultformat_ref01",
+        srcdatavar: "insultformat_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        format: "format01",
+        id: "insultformat01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-insultformat_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicInsultformatFlow"
+}

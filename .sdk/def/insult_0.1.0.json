@@ -1,0 +1,539 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Insult API",
+    "description": "The Insult API generates humorous and creative insults in various formats, allowing users to specify language and templates. It supports multiple languages, including English and corporate jargon, catering to different contexts and preferences.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://insult.mattbas.org/api/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://insult.mattbas.org/api",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/insult": {
+      "get": {
+        "summary": "Generate an insult in plain text",
+        "description": "Generates an insult in plain text format.",
+        "operationId": "getInsultPlainText",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "Language for the insult",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "en",
+                "en_corporate"
+              ],
+              "default": "en"
+            }
+          },
+          {
+            "name": "template",
+            "in": "query",
+            "description": "Custom insult template using SGML-style tags",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "who",
+            "in": "query",
+            "description": "Person to insult, changes the template to third person singular",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "plural",
+            "in": "query",
+            "description": "If present (with who), changes the template to third person plural",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with insult in plain text",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "You are as stupid as a bag of rocks"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request due to incorrect parameters",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/insult.{format}": {
+      "get": {
+        "summary": "Generate an insult in specified format",
+        "description": "Generates an insult in one of the supported formats (txt, json, html).",
+        "operationId": "getInsultFormatted",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "path",
+            "description": "Output format",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "txt",
+                "json",
+                "html"
+              ]
+            }
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "Language for the insult",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "en",
+                "en_corporate"
+              ],
+              "default": "en"
+            }
+          },
+          {
+            "name": "template",
+            "in": "query",
+            "description": "Custom insult template using SGML-style tags",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "who",
+            "in": "query",
+            "description": "Person to insult, changes the template to third person singular",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "plural",
+            "in": "query",
+            "description": "If present (with who), changes the template to third person plural",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with insult in requested format",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsultSuccessResponse"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request due to incorrect parameters",
+            "content": {
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsultErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{lang}/insult.{format}": {
+      "get": {
+        "summary": "Generate an insult in fixed language and format",
+        "description": "Generates an insult in a fixed language and specified format.",
+        "operationId": "getInsultFixedLanguage",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "path",
+            "description": "Language for the insult",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "en",
+                "en_corporate"
+              ]
+            }
+          },
+          {
+            "name": "format",
+            "in": "path",
+            "description": "Output format",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "txt",
+                "json",
+                "html"
+              ]
+            }
+          },
+          {
+            "name": "template",
+            "in": "query",
+            "description": "Custom insult template using SGML-style tags",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "who",
+            "in": "query",
+            "description": "Person to insult, changes the template to third person singular",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "plural",
+            "in": "query",
+            "description": "If present (with who), changes the template to third person plural",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with insult in requested format",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsultSuccessResponse"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request due to incorrect parameters",
+            "content": {
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsultErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/adjective": {
+      "get": {
+        "summary": "Generate a single adjective in plain text",
+        "description": "Generates a single adjective in plain text format.",
+        "operationId": "getAdjectivePlainText",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "Language for the adjective",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "en",
+                "en_corporate"
+              ],
+              "default": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with adjective in plain text",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "stupid"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request due to incorrect parameters",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/adjective.{format}": {
+      "get": {
+        "summary": "Generate a single adjective in specified format",
+        "description": "Generates a single adjective in one of the supported formats.",
+        "operationId": "getAdjectiveFormatted",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "path",
+            "description": "Output format",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "txt",
+                "json",
+                "html"
+              ]
+            }
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "description": "Language for the adjective",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "en",
+                "en_corporate"
+              ],
+              "default": "en"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with adjective in requested format",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdjectiveSuccessResponse"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request due to incorrect parameters",
+            "content": {
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsultErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{lang}/adjective.{format}": {
+      "get": {
+        "summary": "Generate a single adjective in fixed language and format",
+        "description": "Generates a single adjective in a fixed language and specified format.",
+        "operationId": "getAdjectiveFixedLanguage",
+        "parameters": [
+          {
+            "name": "lang",
+            "in": "path",
+            "description": "Language for the adjective",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "en",
+                "en_corporate"
+              ]
+            }
+          },
+          {
+            "name": "format",
+            "in": "path",
+            "description": "Output format",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "txt",
+                "json",
+                "html"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with adjective in requested format",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdjectiveSuccessResponse"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request due to incorrect parameters",
+            "content": {
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsultErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "InsultSuccessResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "boolean",
+            "example": false,
+            "description": "Indicates if an error occurred"
+          },
+          "insult": {
+            "type": "string",
+            "example": "You are as stupid as a bag of rocks",
+            "description": "The generated insult string"
+          },
+          "args": {
+            "type": "object",
+            "description": "A dictionary listing the parameters used to generate the output, including default values",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "error",
+          "insult",
+          "args"
+        ]
+      },
+      "AdjectiveSuccessResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "boolean",
+            "example": false,
+            "description": "Indicates if an error occurred"
+          },
+          "adjective": {
+            "type": "string",
+            "example": "stupid",
+            "description": "The generated adjective string"
+          },
+          "args": {
+            "type": "object",
+            "description": "A dictionary listing the parameters used to generate the output, including default values",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "error",
+          "adjective",
+          "args"
+        ]
+      },
+      "InsultErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "boolean",
+            "example": true,
+            "description": "Indicates if an error occurred"
+          },
+          "error_message": {
+            "type": "string",
+            "example": "Invalid parameter provided",
+            "description": "A brief message describing the reason for the error"
+          }
+        },
+        "required": [
+          "error",
+          "error_message"
+        ]
+      }
+    }
+  }
+}

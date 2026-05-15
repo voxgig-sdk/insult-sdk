@@ -1,0 +1,142 @@
+# Entity: insultformat
+
+main: kit: entity: insultformat: {
+
+  alias: field: {}
+
+  name: "insultformat"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "format"
+                orig: "format"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                example: "en"
+                kind: "query"
+                name: "lang"
+                orig: "lang"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "plural"
+                orig: "plural"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "template"
+                orig: "template"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "who"
+                orig: "who"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/insult.{format}"
+          parts: [
+            "insult.{format}"
+          ]
+          select: {
+            exist: [
+              "format"
+              "lang"
+              "plural"
+              "template"
+              "who"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "format"
+                orig: "format"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "param"
+                name: "lang"
+                orig: "lang"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                kind: "query"
+                name: "plural"
+                orig: "plural"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "template"
+                orig: "template"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "who"
+                orig: "who"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/{lang}/insult.{format}"
+          parts: [
+            "{lang}"
+            "insult.{format}"
+          ]
+          select: {
+            exist: [
+              "format"
+              "lang"
+              "plural"
+              "template"
+              "who"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

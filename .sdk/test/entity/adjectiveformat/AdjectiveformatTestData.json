@@ -1,0 +1,23 @@
+{
+  "existing": {
+    "adjectiveformat": {
+      "ADJECTIVEFORMAT00": {
+        "format": "FORMAT01",
+        "lang": "LANG01"
+      },
+      "ADJECTIVEFORMAT01": {
+        "format": "FORMAT01",
+        "lang": "LANG01"
+      },
+      "ADJECTIVEFORMAT02": {
+        "format": "FORMAT01",
+        "lang": "LANG01"
+      }
+    }
+  },
+  "new": {
+    "adjectiveformat": {
+      "adjectiveformat_ref01": {}
+    }
+  }
+}

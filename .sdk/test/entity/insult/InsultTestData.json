@@ -1,0 +1,14 @@
+{
+  "existing": {
+    "insult": {
+      "INSULT00": {},
+      "INSULT01": {},
+      "INSULT02": {}
+    }
+  },
+  "new": {
+    "insult": {
+      "insult_ref01": {}
+    }
+  }
+}
