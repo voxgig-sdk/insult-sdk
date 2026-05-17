@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/insult-sdk/core"
+	"github.com/voxgig-sdk/insult-sdk/go/core"
 )
 
 type BaseFeature struct {

@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/insult-sdk"
-	"github.com/voxgig-sdk/insult-sdk/core"
+	sdk "github.com/voxgig-sdk/insult-sdk/go"
+	"github.com/voxgig-sdk/insult-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/insult-sdk/go/utility/struct"
 )
 
 func TestInsultEntity(t *testing.T) {

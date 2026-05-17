@@ -1,10 +1,10 @@
 package voxgiginsultsdk
 
 import (
-	"github.com/voxgig-sdk/insult-sdk/core"
-	"github.com/voxgig-sdk/insult-sdk/entity"
-	"github.com/voxgig-sdk/insult-sdk/feature"
-	_ "github.com/voxgig-sdk/insult-sdk/utility"
+	"github.com/voxgig-sdk/insult-sdk/go/core"
+	"github.com/voxgig-sdk/insult-sdk/go/entity"
+	"github.com/voxgig-sdk/insult-sdk/go/feature"
+	_ "github.com/voxgig-sdk/insult-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

@@ -1,9 +1,15 @@
 {
   "existing": {
     "insult": {
-      "INSULT00": {},
-      "INSULT01": {},
-      "INSULT02": {}
+      "INSULT00": {
+        "id": "INSULT00"
+      },
+      "INSULT01": {
+        "id": "INSULT01"
+      },
+      "INSULT02": {
+        "id": "INSULT02"
+      }
     }
   },
   "new": {

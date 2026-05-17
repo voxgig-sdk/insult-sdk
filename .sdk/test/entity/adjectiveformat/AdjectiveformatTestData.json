@@ -3,15 +3,18 @@
     "adjectiveformat": {
       "ADJECTIVEFORMAT00": {
         "format": "FORMAT01",
-        "lang": "LANG01"
+        "lang": "LANG01",
+        "id": "ADJECTIVEFORMAT00"
       },
       "ADJECTIVEFORMAT01": {
         "format": "FORMAT01",
-        "lang": "LANG01"
+        "lang": "LANG01",
+        "id": "ADJECTIVEFORMAT01"
       },
       "ADJECTIVEFORMAT02": {
         "format": "FORMAT01",
-        "lang": "LANG01"
+        "lang": "LANG01",
+        "id": "ADJECTIVEFORMAT02"
       }
     }
   },

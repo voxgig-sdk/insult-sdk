@@ -3,7 +3,7 @@ package utility
 import (
 	"fmt"
 
-	"github.com/voxgig-sdk/insult-sdk/core"
+	"github.com/voxgig-sdk/insult-sdk/go/core"
 )
 
 func resultBasicUtil(ctx *core.Context) *core.Result {

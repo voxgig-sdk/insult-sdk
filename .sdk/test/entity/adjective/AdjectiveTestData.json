@@ -1,9 +1,15 @@
 {
   "existing": {
     "adjective": {
-      "ADJECTIVE00": {},
-      "ADJECTIVE01": {},
-      "ADJECTIVE02": {}
+      "ADJECTIVE00": {
+        "id": "ADJECTIVE00"
+      },
+      "ADJECTIVE01": {
+        "id": "ADJECTIVE01"
+      },
+      "ADJECTIVE02": {
+        "id": "ADJECTIVE02"
+      }
     }
   },
   "new": {

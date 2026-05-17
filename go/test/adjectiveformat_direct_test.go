@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/insult-sdk"
-	"github.com/voxgig-sdk/insult-sdk/core"
+	sdk "github.com/voxgig-sdk/insult-sdk/go"
+	"github.com/voxgig-sdk/insult-sdk/go/core"
 )
 
 func TestAdjectiveformatDirect(t *testing.T) {
