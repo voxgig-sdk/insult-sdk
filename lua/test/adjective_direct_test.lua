@@ -62,14 +62,12 @@ function adjective_direct_setup(mockres)
   local env = runner.env_override({
     ["INSULT_TEST_ADJECTIVE_ENTID"] = {},
     ["INSULT_TEST_LIVE"] = "FALSE",
-    ["INSULT_APIKEY"] = "NONE",
   })
 
   local live = env["INSULT_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["INSULT_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

@@ -67,14 +67,12 @@ function insult_direct_setup($mockres)
     $env = Runner::env_override([
         "INSULT_TEST_INSULT_ENTID" => [],
         "INSULT_TEST_LIVE" => "FALSE",
-        "INSULT_APIKEY" => "NONE",
     ]);
 
     $live = $env["INSULT_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["INSULT_APIKEY"],
         ];
         $client = new InsultSDK($merged_opts);
         return [

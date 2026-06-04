@@ -61,14 +61,12 @@ def insultformat_direct_setup(mockres)
   env = Runner.env_override({
     "INSULT_TEST_INSULTFORMAT_ENTID" => {},
     "INSULT_TEST_LIVE" => "FALSE",
-    "INSULT_APIKEY" => "NONE",
   })
 
   live = env["INSULT_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["INSULT_APIKEY"],
     }
     client = InsultSDK.new(merged_opts)
     return {

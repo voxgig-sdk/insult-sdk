@@ -15,9 +15,6 @@ def make_config():
         },
         "options": {
             "base": "https://insult.mattbas.org/api",
-            "auth": {
-                "prefix": "Bearer",
-            },
             "headers": {
         "content-type": "application/json",
       },

@@ -91,7 +91,6 @@ def _adjective_basic_setup(extra):
         "INSULT_TEST_ADJECTIVE_ENTID": idmap,
         "INSULT_TEST_LIVE": "FALSE",
         "INSULT_TEST_EXPLAIN": "FALSE",
-        "INSULT_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +101,6 @@ def _adjective_basic_setup(extra):
     if env.get("INSULT_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("INSULT_APIKEY"),
             },
             extra or {},
         ])

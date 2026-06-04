@@ -82,7 +82,6 @@ def insultformat_basic_setup(extra)
     "INSULT_TEST_INSULTFORMAT_ENTID" => idmap,
     "INSULT_TEST_LIVE" => "FALSE",
     "INSULT_TEST_EXPLAIN" => "FALSE",
-    "INSULT_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +93,6 @@ def insultformat_basic_setup(extra)
   if env["INSULT_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["INSULT_APIKEY"],
       },
       extra || {},
     ])

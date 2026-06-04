@@ -117,7 +117,6 @@ func adjectiveformatBasicSetup(extra map[string]any) *entityTestSetup {
 		"INSULT_TEST_ADJECTIVEFORMAT_ENTID": idmap,
 		"INSULT_TEST_LIVE":      "FALSE",
 		"INSULT_TEST_EXPLAIN":   "FALSE",
-		"INSULT_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["INSULT_TEST_ADJECTIVEFORMAT_ENTID"])
@@ -128,7 +127,6 @@ func adjectiveformatBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["INSULT_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["INSULT_APIKEY"],
 			},
 			extra,
 		})
