@@ -10,7 +10,7 @@ The PHP SDK for the Insult API — an entity-oriented client using PHP conventio
 
 ## Install
 ```bash
-composer require voxgig/insult-sdk
+composer require voxgig-sdk/insult
 ```
 
 

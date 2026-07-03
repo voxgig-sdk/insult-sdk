@@ -10,7 +10,7 @@ The Python SDK for the Insult API — an entity-oriented client following Python
 
 ## Install
 ```bash
-pip install insult-sdk
+pip install voxgig-sdk-insult
 ```
 
 Or install from source:

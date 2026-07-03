@@ -10,13 +10,13 @@ The Ruby SDK for the Insult API — an entity-oriented client using idiomatic Ru
 
 ## Install
 ```bash
-gem install insult-sdk
+gem install voxgig-sdk-insult
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "insult-sdk"
+gem "voxgig-sdk-insult"
 ```
 
 Then run:

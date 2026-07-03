@@ -10,7 +10,7 @@ The TypeScript SDK for the Insult API — a type-safe, entity-oriented client wi
 
 ## Install
 ```bash
-npm install insult
+npm install @voxgig-sdk/insult
 ```
 ## Tutorial: your first API call
 
