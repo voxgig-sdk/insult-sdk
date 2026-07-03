@@ -1,6 +1,11 @@
 # Insult Python SDK
 
-The Python SDK for the Insult API. Provides an entity-oriented interface following Pythonic conventions.
+
+
+The Python SDK for the Insult API — an entity-oriented client following Pythonic conventions.
+
+> Other languages, the CLI, and MCP server live alongside this one — see
+> the [top-level README](../README.md).
 
 
 ## Install
@@ -23,15 +28,18 @@ loading a specific record.
 ### 1. Create a client
 
 ```python
+import os
 from insult_sdk import InsultSDK
 
-client = InsultSDK({})
+client = InsultSDK({
+    "apikey": os.environ.get("INSULT_APIKEY"),
+})
 ```
 
 ### 3. Load a adjective
 
 ```python
-result, err = client.Adjective(None).load({"id": "example_id"}, None)
+result, err = client.Adjective().load({"id": "example_id"})
 if err:
     raise Exception(err)
 print(result)
@@ -79,11 +87,9 @@ print(fetchdef["headers"])
 Create a mock client for unit testing — no server required:
 
 ```python
-client = InsultSDK.test(None, None)
+client = InsultSDK.test()
 
-result, err = client.Insult(None).load(
-    {"id": "test01"}, None
-)
+result, err = client.Insult().load({"id": "test01"})
 # result contains mock response data
 ```
 
@@ -114,6 +120,7 @@ Create a `.env.local` file at the project root:
 
 ```
 INSULT_TEST_LIVE=TRUE
+INSULT_APIKEY=<your-key>
 ```
 
 Then run:
@@ -137,6 +144,7 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `apikey` | `str` | API key for authentication. |
 | `base` | `str` | Base URL of the API server. |
 | `prefix` | `str` | URL path prefix prepended to all requests. |
 | `suffix` | `str` | URL path suffix appended to all requests. |

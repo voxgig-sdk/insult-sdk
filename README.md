@@ -1,21 +1,8 @@
 # Insult SDK
 
-Generate humorous insults in multiple languages, with custom templates and target names
+Insult API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Insult API
-
-The Insult API is a small public service run by [Matt Bastien](https://insult.mattbas.org/api/) that returns randomly generated, light-hearted insults. It is mirrored on the community catalogue at [freepublicapis.com](https://freepublicapis.com/insult-api).
-
-What you get from the API:
-
-- Full insults as plain text, JSON, or HTML (`/api/insult`, `/api/insult.<format>`)
-- Single adjectives in the same three formats (`/api/adjective`, `/api/adjective.<format>`)
-- Language-scoped variants via `/api/<lang>/insult.<format>` and `/api/<lang>/adjective.<format>`, with English (`en`) and English corporate jargon (`en_corporate`) documented
-- Optional `template`, `who`, and `plural` query parameters to customise wording and the target of the insult
-
-JSON responses include an `error` flag, the generated `insult` string, and an `args` echo of the parameters used; failures return `error: true` with an `error_message`. The community page notes that CORS is enabled and no authentication is required.
 
 ## Try it
 
@@ -49,27 +36,31 @@ gem install insult-sdk
 luarocks install insult-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { InsultSDK } from 'insult'
 
-const client = new InsultSDK({})
+const client = new InsultSDK({
+  apikey: process.env.INSULT_APIKEY,
+})
 
+// Load adjective data
+const adjective = await client.Adjective().load({})
+console.log(adjective.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -99,10 +90,10 @@ The API exposes 4 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Adjective** | A single generated adjective, served from `/api/adjective` and `/api/adjective.<format>` (plus language-scoped `/api/<lang>/adjective.<format>`). | `/adjective` |
-| **Adjectiveformat** | Format-specific adjective responses (`txt`, `json`, or `html`) returned by `/api/adjective.<format>`. | `/adjective.{format}` |
-| **Insult** | A full generated insult, served from `/api/insult` and `/api/insult.<format>` (plus language-scoped `/api/<lang>/insult.<format>`), with optional `template`, `who`, and `plural` parameters. | `/insult` |
-| **Insultformat** | Format-specific insult responses (`txt`, `json`, or `html`) returned by `/api/insult.<format>`. | `/insult.{format}` |
+| **Adjective** |  | `/adjective` |
+| **Adjectiveformat** |  | `/adjective.{format}` |
+| **Insult** |  | `/insult` |
+| **Insultformat** |  | `/insult.{format}` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -112,15 +103,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from insult_sdk import InsultSDK
 
-client = InsultSDK({})
+client = InsultSDK({
+    "apikey": os.environ.get("INSULT_APIKEY"),
+})
 
 
 # Load a specific adjective
-adjective, err = client.Adjective(None).load(
-    {"id": "example_id"}, None
-)
+adjective, err = client.Adjective().load({"id": "example_id"})
+print(adjective)
 ```
 
 ### PHP
@@ -129,13 +122,14 @@ adjective, err = client.Adjective(None).load(
 <?php
 require_once 'insult_sdk.php';
 
-$client = new InsultSDK([]);
+$client = new InsultSDK([
+    "apikey" => getenv("INSULT_APIKEY"),
+]);
 
 
 // Load a specific adjective
-[$adjective, $err] = $client->Adjective(null)->load(
-    ["id" => "example_id"], null
-);
+[$adjective, $err] = $client->Adjective()->load(["id" => "example_id"]);
+print_r($adjective);
 ```
 
 ### Golang
@@ -143,8 +137,13 @@ $client = new InsultSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/insult-sdk/go"
 
-client := sdk.NewInsultSDK(map[string]any{})
+client := sdk.NewInsultSDK(map[string]any{
+    "apikey": os.Getenv("INSULT_APIKEY"),
+})
 
+// Load adjective data
+adjective, err := client.Adjective(nil).Load(map[string]any{}, nil)
+fmt.Println(adjective)
 ```
 
 ### Ruby
@@ -152,13 +151,14 @@ client := sdk.NewInsultSDK(map[string]any{})
 ```ruby
 require_relative "Insult_sdk"
 
-client = InsultSDK.new({})
+client = InsultSDK.new({
+  "apikey" => ENV["INSULT_APIKEY"],
+})
 
 
 # Load a specific adjective
-adjective, err = client.Adjective(nil).load(
-  { "id" => "example_id" }, nil
-)
+adjective, err = client.Adjective().load({ "id" => "example_id" })
+puts adjective
 ```
 
 ### Lua
@@ -166,13 +166,14 @@ adjective, err = client.Adjective(nil).load(
 ```lua
 local sdk = require("insult_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("INSULT_APIKEY"),
+})
 
 
 -- Load a specific adjective
-local adjective, err = client:Adjective(nil):load(
-  { id = "example_id" }, nil
-)
+local adjective, err = client:Adjective():load({ id = "example_id" })
+print(adjective)
 ```
 
 ## Unit testing in offline mode
@@ -191,25 +192,21 @@ const result = await client.Adjective().load({ id: 'test01' })
 ### Python
 
 ```python
-client = InsultSDK.test(None, None)
-result, err = client.Adjective(None).load(
-    {"id": "test01"}, None
-)
+client = InsultSDK.test()
+result, err = client.Adjective().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = InsultSDK::test(null, null);
-[$result, $err] = $client->Adjective(null)->load(
-    ["id" => "test01"], null
-);
+$client = InsultSDK::test();
+[$result, $err] = $client->Adjective()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Adjective(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -218,19 +215,15 @@ result, err := client.Adjective(nil).Load(
 ### Ruby
 
 ```ruby
-client = InsultSDK.test(nil, nil)
-result, err = client.Adjective(nil).load(
-  { "id" => "test01" }, nil
-)
+client = InsultSDK.test
+result, err = client.Adjective().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Adjective(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Adjective():load({ id = "test01" })
 ```
 
 ## How it works
@@ -334,10 +327,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Insult API
-
-- Upstream: [https://insult.mattbas.org/api/](https://insult.mattbas.org/api/)
 
 ---
 

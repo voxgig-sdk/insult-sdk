@@ -30,12 +30,12 @@ Create a new SDK client instance.
 
 ### Static Methods
 
-#### `sdk.test(testopts, sdkopts)`
+#### `sdk.test(testopts?, sdkopts?)`
 
-Create a test client with mock features active. Both arguments may be `nil`.
+Create a test client with mock features active. Both arguments are optional.
 
 ```lua
-local client = sdk.test(nil, nil)
+local client = sdk.test()
 ```
 
 
@@ -106,7 +106,7 @@ local adjective = client:Adjective(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Adjective(nil):load({ id = "adjective_id" }, nil)
+local result, err = client:Adjective():load({ id = "adjective_id" })
 ```
 
 ### Common Methods
@@ -152,7 +152,7 @@ local adjectiveformat = client:Adjectiveformat(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Adjectiveformat(nil):load({ id = "adjectiveformat_id" }, nil)
+local result, err = client:Adjectiveformat():load({ id = "adjectiveformat_id" })
 ```
 
 ### Common Methods
@@ -198,7 +198,7 @@ local insult = client:Insult(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Insult(nil):load({ id = "insult_id" }, nil)
+local result, err = client:Insult():load({ id = "insult_id" })
 ```
 
 ### Common Methods
@@ -244,7 +244,7 @@ local insultformat = client:Insultformat(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Insultformat(nil):load({ id = "insultformat_id" }, nil)
+local result, err = client:Insultformat():load({ id = "insultformat_id" })
 ```
 
 ### Common Methods

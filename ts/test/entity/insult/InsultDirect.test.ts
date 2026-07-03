@@ -74,12 +74,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'INSULT_TEST_INSULT_ENTID': {},
     'INSULT_TEST_LIVE': 'FALSE',
+    'INSULT_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.INSULT_TEST_LIVE
 
   if (live) {
     const client = new InsultSDK({
+      apikey: env.INSULT_APIKEY,
     })
 
     let idmap: any = env['INSULT_TEST_INSULT_ENTID']

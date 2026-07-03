@@ -14,6 +14,9 @@ func MakeConfig() map[string]any {
 		},
 		"options": map[string]any{
 			"base": "https://insult.mattbas.org/api",
+			"auth": map[string]any{
+				"prefix": "Bearer",
+			},
 			"headers": map[string]any{
 				"content-type": "application/json",
 			},
@@ -30,19 +33,21 @@ func MakeConfig() map[string]any {
 				"name": "adjective",
 				"op": map[string]any{
 					"load": map[string]any{
+						"input": "data",
 						"name": "load",
 						"points": []any{
 							map[string]any{
+								"active": true,
 								"args": map[string]any{
 									"query": []any{
 										map[string]any{
+											"active": true,
 											"example": "en",
 											"kind": "query",
 											"name": "lang",
 											"orig": "lang",
 											"reqd": false,
 											"type": "`$STRING`",
-											"active": true,
 										},
 									},
 								},
@@ -60,11 +65,9 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"active": true,
 								"index$": 0,
 							},
 						},
-						"input": "data",
 						"key$": "load",
 					},
 				},
@@ -77,29 +80,31 @@ func MakeConfig() map[string]any {
 				"name": "adjectiveformat",
 				"op": map[string]any{
 					"load": map[string]any{
+						"input": "data",
 						"name": "load",
 						"points": []any{
 							map[string]any{
+								"active": true,
 								"args": map[string]any{
 									"params": []any{
 										map[string]any{
+											"active": true,
 											"kind": "param",
 											"name": "format",
 											"orig": "format",
 											"reqd": true,
 											"type": "`$STRING`",
-											"active": true,
 										},
 									},
 									"query": []any{
 										map[string]any{
+											"active": true,
 											"example": "en",
 											"kind": "query",
 											"name": "lang",
 											"orig": "lang",
 											"reqd": false,
 											"type": "`$STRING`",
-											"active": true,
 										},
 									},
 								},
@@ -118,27 +123,27 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"active": true,
 								"index$": 0,
 							},
 							map[string]any{
+								"active": true,
 								"args": map[string]any{
 									"params": []any{
 										map[string]any{
+											"active": true,
 											"kind": "param",
 											"name": "format",
 											"orig": "format",
 											"reqd": true,
 											"type": "`$STRING`",
-											"active": true,
 										},
 										map[string]any{
+											"active": true,
 											"kind": "param",
 											"name": "lang",
 											"orig": "lang",
 											"reqd": true,
 											"type": "`$STRING`",
-											"active": true,
 										},
 									},
 								},
@@ -158,11 +163,9 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"active": true,
 								"index$": 1,
 							},
 						},
-						"input": "data",
 						"key$": "load",
 					},
 				},
@@ -175,43 +178,45 @@ func MakeConfig() map[string]any {
 				"name": "insult",
 				"op": map[string]any{
 					"load": map[string]any{
+						"input": "data",
 						"name": "load",
 						"points": []any{
 							map[string]any{
+								"active": true,
 								"args": map[string]any{
 									"query": []any{
 										map[string]any{
+											"active": true,
 											"example": "en",
 											"kind": "query",
 											"name": "lang",
 											"orig": "lang",
 											"reqd": false,
 											"type": "`$STRING`",
-											"active": true,
 										},
 										map[string]any{
+											"active": true,
 											"kind": "query",
 											"name": "plural",
 											"orig": "plural",
 											"reqd": false,
 											"type": "`$STRING`",
-											"active": true,
 										},
 										map[string]any{
+											"active": true,
 											"kind": "query",
 											"name": "template",
 											"orig": "template",
 											"reqd": false,
 											"type": "`$STRING`",
-											"active": true,
 										},
 										map[string]any{
+											"active": true,
 											"kind": "query",
 											"name": "who",
 											"orig": "who",
 											"reqd": false,
 											"type": "`$STRING`",
-											"active": true,
 										},
 									},
 								},
@@ -232,11 +237,9 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"active": true,
 								"index$": 0,
 							},
 						},
-						"input": "data",
 						"key$": "load",
 					},
 				},
@@ -249,53 +252,55 @@ func MakeConfig() map[string]any {
 				"name": "insultformat",
 				"op": map[string]any{
 					"load": map[string]any{
+						"input": "data",
 						"name": "load",
 						"points": []any{
 							map[string]any{
+								"active": true,
 								"args": map[string]any{
 									"params": []any{
 										map[string]any{
+											"active": true,
 											"kind": "param",
 											"name": "format",
 											"orig": "format",
 											"reqd": true,
 											"type": "`$STRING`",
-											"active": true,
 										},
 									},
 									"query": []any{
 										map[string]any{
+											"active": true,
 											"example": "en",
 											"kind": "query",
 											"name": "lang",
 											"orig": "lang",
 											"reqd": false,
 											"type": "`$STRING`",
-											"active": true,
 										},
 										map[string]any{
+											"active": true,
 											"kind": "query",
 											"name": "plural",
 											"orig": "plural",
 											"reqd": false,
 											"type": "`$STRING`",
-											"active": true,
 										},
 										map[string]any{
+											"active": true,
 											"kind": "query",
 											"name": "template",
 											"orig": "template",
 											"reqd": false,
 											"type": "`$STRING`",
-											"active": true,
 										},
 										map[string]any{
+											"active": true,
 											"kind": "query",
 											"name": "who",
 											"orig": "who",
 											"reqd": false,
 											"type": "`$STRING`",
-											"active": true,
 										},
 									},
 								},
@@ -317,53 +322,53 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"active": true,
 								"index$": 0,
 							},
 							map[string]any{
+								"active": true,
 								"args": map[string]any{
 									"params": []any{
 										map[string]any{
+											"active": true,
 											"kind": "param",
 											"name": "format",
 											"orig": "format",
 											"reqd": true,
 											"type": "`$STRING`",
-											"active": true,
 										},
 										map[string]any{
+											"active": true,
 											"kind": "param",
 											"name": "lang",
 											"orig": "lang",
 											"reqd": true,
 											"type": "`$STRING`",
-											"active": true,
 										},
 									},
 									"query": []any{
 										map[string]any{
+											"active": true,
 											"kind": "query",
 											"name": "plural",
 											"orig": "plural",
 											"reqd": false,
 											"type": "`$STRING`",
-											"active": true,
 										},
 										map[string]any{
+											"active": true,
 											"kind": "query",
 											"name": "template",
 											"orig": "template",
 											"reqd": false,
 											"type": "`$STRING`",
-											"active": true,
 										},
 										map[string]any{
+											"active": true,
 											"kind": "query",
 											"name": "who",
 											"orig": "who",
 											"reqd": false,
 											"type": "`$STRING`",
-											"active": true,
 										},
 									},
 								},
@@ -386,11 +391,9 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"active": true,
 								"index$": 1,
 							},
 						},
-						"input": "data",
 						"key$": "load",
 					},
 				},

@@ -91,6 +91,7 @@ function adjectiveformat_basic_setup(extra)
     ["INSULT_TEST_ADJECTIVEFORMAT_ENTID"] = idmap,
     ["INSULT_TEST_LIVE"] = "FALSE",
     ["INSULT_TEST_EXPLAIN"] = "FALSE",
+    ["INSULT_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -102,6 +103,7 @@ function adjectiveformat_basic_setup(extra)
   if env["INSULT_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["INSULT_APIKEY"],
       },
       extra or {},
     })

@@ -59,12 +59,14 @@ def _insult_direct_setup(mockres):
     env = runner.env_override({
         "INSULT_TEST_INSULT_ENTID": {},
         "INSULT_TEST_LIVE": "FALSE",
+        "INSULT_APIKEY": "NONE",
     })
 
     live = env.get("INSULT_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("INSULT_APIKEY"),
         }
         client = InsultSDK(merged_opts)
         return {

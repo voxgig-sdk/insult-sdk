@@ -15,6 +15,9 @@ module InsultConfig
       },
       "options" => {
         "base" => "https://insult.mattbas.org/api",
+        "auth" => {
+          "prefix" => "Bearer",
+        },
         "headers" => {
           "content-type" => "application/json",
         },
@@ -31,19 +34,21 @@ module InsultConfig
           "name" => "adjective",
           "op" => {
             "load" => {
+              "input" => "data",
               "name" => "load",
               "points" => [
                 {
+                  "active" => true,
                   "args" => {
                     "query" => [
                       {
+                        "active" => true,
                         "example" => "en",
                         "kind" => "query",
                         "name" => "lang",
                         "orig" => "lang",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -61,11 +66,9 @@ module InsultConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
                   "index$" => 0,
                 },
               ],
-              "input" => "data",
               "key$" => "load",
             },
           },
@@ -78,29 +81,31 @@ module InsultConfig
           "name" => "adjectiveformat",
           "op" => {
             "load" => {
+              "input" => "data",
               "name" => "load",
               "points" => [
                 {
+                  "active" => true,
                   "args" => {
                     "params" => [
                       {
+                        "active" => true,
                         "kind" => "param",
                         "name" => "format",
                         "orig" => "format",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                     "query" => [
                       {
+                        "active" => true,
                         "example" => "en",
                         "kind" => "query",
                         "name" => "lang",
                         "orig" => "lang",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -119,27 +124,27 @@ module InsultConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
                   "index$" => 0,
                 },
                 {
+                  "active" => true,
                   "args" => {
                     "params" => [
                       {
+                        "active" => true,
                         "kind" => "param",
                         "name" => "format",
                         "orig" => "format",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                       {
+                        "active" => true,
                         "kind" => "param",
                         "name" => "lang",
                         "orig" => "lang",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -159,11 +164,9 @@ module InsultConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
                   "index$" => 1,
                 },
               ],
-              "input" => "data",
               "key$" => "load",
             },
           },
@@ -176,43 +179,45 @@ module InsultConfig
           "name" => "insult",
           "op" => {
             "load" => {
+              "input" => "data",
               "name" => "load",
               "points" => [
                 {
+                  "active" => true,
                   "args" => {
                     "query" => [
                       {
+                        "active" => true,
                         "example" => "en",
                         "kind" => "query",
                         "name" => "lang",
                         "orig" => "lang",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                       {
+                        "active" => true,
                         "kind" => "query",
                         "name" => "plural",
                         "orig" => "plural",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                       {
+                        "active" => true,
                         "kind" => "query",
                         "name" => "template",
                         "orig" => "template",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                       {
+                        "active" => true,
                         "kind" => "query",
                         "name" => "who",
                         "orig" => "who",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -233,11 +238,9 @@ module InsultConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
                   "index$" => 0,
                 },
               ],
-              "input" => "data",
               "key$" => "load",
             },
           },
@@ -250,53 +253,55 @@ module InsultConfig
           "name" => "insultformat",
           "op" => {
             "load" => {
+              "input" => "data",
               "name" => "load",
               "points" => [
                 {
+                  "active" => true,
                   "args" => {
                     "params" => [
                       {
+                        "active" => true,
                         "kind" => "param",
                         "name" => "format",
                         "orig" => "format",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                     "query" => [
                       {
+                        "active" => true,
                         "example" => "en",
                         "kind" => "query",
                         "name" => "lang",
                         "orig" => "lang",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                       {
+                        "active" => true,
                         "kind" => "query",
                         "name" => "plural",
                         "orig" => "plural",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                       {
+                        "active" => true,
                         "kind" => "query",
                         "name" => "template",
                         "orig" => "template",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                       {
+                        "active" => true,
                         "kind" => "query",
                         "name" => "who",
                         "orig" => "who",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -318,53 +323,53 @@ module InsultConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
                   "index$" => 0,
                 },
                 {
+                  "active" => true,
                   "args" => {
                     "params" => [
                       {
+                        "active" => true,
                         "kind" => "param",
                         "name" => "format",
                         "orig" => "format",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                       {
+                        "active" => true,
                         "kind" => "param",
                         "name" => "lang",
                         "orig" => "lang",
                         "reqd" => true,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                     "query" => [
                       {
+                        "active" => true,
                         "kind" => "query",
                         "name" => "plural",
                         "orig" => "plural",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                       {
+                        "active" => true,
                         "kind" => "query",
                         "name" => "template",
                         "orig" => "template",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                       {
+                        "active" => true,
                         "kind" => "query",
                         "name" => "who",
                         "orig" => "who",
                         "reqd" => false,
                         "type" => "`$STRING`",
-                        "active" => true,
                       },
                     ],
                   },
@@ -387,11 +392,9 @@ module InsultConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "active" => true,
                   "index$" => 1,
                 },
               ],
-              "input" => "data",
               "key$" => "load",
             },
           },

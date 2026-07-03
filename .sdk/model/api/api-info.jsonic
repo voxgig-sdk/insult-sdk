@@ -16,26 +16,7 @@ main: {
       ]
       title: "Insult API"
       version: "1.0.0"
-      tagline: "Generate humorous insults in multiple languages, with custom templates and target names"
-      homepage: "https://insult.mattbas.org/api/"
-      docs_url: "https://insult.mattbas.org/api/"
-      about_md: `The Insult API is a small public service run by [Matt Bastien](https://insult.mattbas.org/api/) that returns randomly generated, light-hearted insults. It is mirrored on the community catalogue at [freepublicapis.com](https://freepublicapis.com/insult-api).
-
-What you get from the API:
-
-- Full insults as plain text, JSON, or HTML (\`/api/insult\`, \`/api/insult.<format>\`)
-- Single adjectives in the same three formats (\`/api/adjective\`, \`/api/adjective.<format>\`)
-- Language-scoped variants via \`/api/<lang>/insult.<format>\` and \`/api/<lang>/adjective.<format>\`, with English (\`en\`) and English corporate jargon (\`en_corporate\`) documented
-- Optional \`template\`, \`who\`, and \`plural\` query parameters to customise wording and the target of the insult
-
-JSON responses include an \`error\` flag, the generated \`insult\` string, and an \`args\` echo of the parameters used; failures return \`error: true\` with an \`error_message\`. The community page notes that CORS is enabled and no authentication is required.`
-      entity_desc: {
-        adjective: "A single generated adjective, served from `/api/adjective` and `/api/adjective.<format>` (plus language-scoped `/api/<lang>/adjective.<format>`)."
-        adjectiveformat: "Format-specific adjective responses (`txt`, `json`, or `html`) returned by `/api/adjective.<format>`."
-        insult: "A full generated insult, served from `/api/insult` and `/api/insult.<format>` (plus language-scoped `/api/<lang>/insult.<format>`), with optional `template`, `who`, and `plural` parameters."
-        insultformat: "Format-specific insult responses (`txt`, `json`, or `html`) returned by `/api/insult.<format>`."
-      }
-      auth: false
     }
   }
 }
+
