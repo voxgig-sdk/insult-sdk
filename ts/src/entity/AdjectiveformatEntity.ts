@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Adjectiveformat,
+  AdjectiveformatLoadMatch,
+} from '../InsultTypes'
 
 // TODO: needs Entity superclass
-class AdjectiveformatEntity extends InsultEntityBase {
+class AdjectiveformatEntity extends InsultEntityBase<Adjectiveformat> {
 
   constructor(client: InsultSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class AdjectiveformatEntity extends InsultEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: AdjectiveformatLoadMatch, ctrl?: Control): Promise<Adjectiveformat> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class AdjectiveformatEntity extends InsultEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Adjectiveformat> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

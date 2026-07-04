@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'INSULT_TEST_INSULT_ENTID': idmap,
     'INSULT_TEST_LIVE': 'FALSE',
     'INSULT_TEST_EXPLAIN': 'FALSE',
-    'INSULT_APIKEY': 'NONE',
   })
 
   idmap = env['INSULT_TEST_INSULT_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new InsultSDK(merge([
       {
-        apikey: env.INSULT_APIKEY,
       },
       extra
     ]))

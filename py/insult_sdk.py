@@ -144,16 +144,23 @@ class InsultSDK:
 
         _, err = utility.prepare_auth(ctx)
         if err is not None:
-            return None, err
+            raise err
 
-        return utility.make_fetch_def(ctx)
+        fetchdef, err = utility.make_fetch_def(ctx)
+        if err is not None:
+            raise err
+
+        return fetchdef
 
     def direct(self, fetchargs=None):
         utility = self._utility
 
-        fetchdef, err = self.prepare(fetchargs)
-        if err is not None:
-            return {"ok": False, "err": err}, None
+        try:
+            fetchdef = self.prepare(fetchargs)
+        except Exception as err:
+            # direct() is the raw-HTTP escape hatch: it never raises, it
+            # returns a result object callers branch on via result["ok"].
+            return {"ok": False, "err": err}
 
         if fetchargs is None:
             fetchargs = {}
@@ -170,13 +177,13 @@ class InsultSDK:
         fetched, fetch_err = utility.fetcher(ctx, url, fetchdef)
 
         if fetch_err is not None:
-            return {"ok": False, "err": fetch_err}, None
+            return {"ok": False, "err": fetch_err}
 
         if fetched is None:
             return {
                 "ok": False,
                 "err": ctx.make_error("direct_no_response", "response: undefined"),
-            }, None
+            }
 
         if isinstance(fetched, dict):
             status = helpers.to_int(vs.getprop(fetched, "status"))
@@ -205,30 +212,74 @@ class InsultSDK:
                 "status": status,
                 "headers": headers,
                 "data": json_data,
-            }, None
+            }
 
         return {
             "ok": False,
             "err": ctx.make_error("direct_invalid", "invalid response type"),
-        }, None
+        }
 
+
+    @property
+    def adjective(self):
+        """Idiomatic facade: client.adjective.list() / client.adjective.load({"id": ...})."""
+        from entity.adjective_entity import AdjectiveEntity
+        cached = getattr(self, "_adjective", None)
+        if cached is None:
+            cached = AdjectiveEntity(self, None)
+            self._adjective = cached
+        return cached
 
     def Adjective(self, data=None):
+        # Deprecated: use client.adjective instead.
         from entity.adjective_entity import AdjectiveEntity
         return AdjectiveEntity(self, data)
 
 
+    @property
+    def adjectiveformat(self):
+        """Idiomatic facade: client.adjectiveformat.list() / client.adjectiveformat.load({"id": ...})."""
+        from entity.adjectiveformat_entity import AdjectiveformatEntity
+        cached = getattr(self, "_adjectiveformat", None)
+        if cached is None:
+            cached = AdjectiveformatEntity(self, None)
+            self._adjectiveformat = cached
+        return cached
+
     def Adjectiveformat(self, data=None):
+        # Deprecated: use client.adjectiveformat instead.
         from entity.adjectiveformat_entity import AdjectiveformatEntity
         return AdjectiveformatEntity(self, data)
 
 
+    @property
+    def insult(self):
+        """Idiomatic facade: client.insult.list() / client.insult.load({"id": ...})."""
+        from entity.insult_entity import InsultEntity
+        cached = getattr(self, "_insult", None)
+        if cached is None:
+            cached = InsultEntity(self, None)
+            self._insult = cached
+        return cached
+
     def Insult(self, data=None):
+        # Deprecated: use client.insult instead.
         from entity.insult_entity import InsultEntity
         return InsultEntity(self, data)
 
 
+    @property
+    def insultformat(self):
+        """Idiomatic facade: client.insultformat.list() / client.insultformat.load({"id": ...})."""
+        from entity.insultformat_entity import InsultformatEntity
+        cached = getattr(self, "_insultformat", None)
+        if cached is None:
+            cached = InsultformatEntity(self, None)
+            self._insultformat = cached
+        return cached
+
     def Insultformat(self, data=None):
+        # Deprecated: use client.insultformat instead.
         from entity.insultformat_entity import InsultformatEntity
         return InsultformatEntity(self, data)
 

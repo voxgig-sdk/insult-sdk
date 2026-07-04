@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch AdjectiveLoadMatch
+---@param ctrl? table
+---@return Adjective
+---@return string? err
 function AdjectiveEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

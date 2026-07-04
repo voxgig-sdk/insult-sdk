@@ -20,9 +20,6 @@ class InsultConfig
             ],
             "options" => [
                 "base" => "https://insult.mattbas.org/api",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
@@ -100,6 +97,7 @@ class InsultConfig
                         'orig' => 'format',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                     'query' => [
@@ -142,6 +140,7 @@ class InsultConfig
                         'orig' => 'format',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                       [
                         'active' => true,
@@ -150,6 +149,7 @@ class InsultConfig
                         'orig' => 'lang',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 1,
                       ],
                     ],
                   ],
@@ -272,6 +272,7 @@ class InsultConfig
                         'orig' => 'format',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                     'query' => [
@@ -341,6 +342,7 @@ class InsultConfig
                         'orig' => 'format',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                       [
                         'active' => true,
@@ -349,6 +351,7 @@ class InsultConfig
                         'orig' => 'lang',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 1,
                       ],
                     ],
                     'query' => [

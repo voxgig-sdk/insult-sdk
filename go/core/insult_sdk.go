@@ -245,21 +245,33 @@ func (sdk *InsultSDK) Direct(fetchargs map[string]any) (map[string]any, error) {
 }
 
 
+// Adjective returns a Adjective entity bound to this client.
+// Idiomatic usage: client.Adjective(nil).List(nil, nil) or
+// client.Adjective(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *InsultSDK) Adjective(data map[string]any) InsultEntity {
 	return NewAdjectiveEntityFunc(sdk, data)
 }
 
 
+// Adjectiveformat returns a Adjectiveformat entity bound to this client.
+// Idiomatic usage: client.Adjectiveformat(nil).List(nil, nil) or
+// client.Adjectiveformat(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *InsultSDK) Adjectiveformat(data map[string]any) InsultEntity {
 	return NewAdjectiveformatEntityFunc(sdk, data)
 }
 
 
+// Insult returns a Insult entity bound to this client.
+// Idiomatic usage: client.Insult(nil).List(nil, nil) or
+// client.Insult(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *InsultSDK) Insult(data map[string]any) InsultEntity {
 	return NewInsultEntityFunc(sdk, data)
 }
 
 
+// Insultformat returns a Insultformat entity bound to this client.
+// Idiomatic usage: client.Insultformat(nil).List(nil, nil) or
+// client.Insultformat(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *InsultSDK) Insultformat(data map[string]any) InsultEntity {
 	return NewInsultformatEntityFunc(sdk, data)
 }

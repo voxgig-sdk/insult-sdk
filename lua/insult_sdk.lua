@@ -244,24 +244,76 @@ end
 
 
 
+-- Idiomatic facade: client:adjective():list() / client:adjective():load({ id = ... })
+function InsultSDK:adjective(data)
+  local EntityMod = require("entity.adjective_entity")
+  if data == nil then
+    if self._adjective == nil then
+      self._adjective = EntityMod.new(self, nil)
+    end
+    return self._adjective
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:adjective() instead.
 function InsultSDK:Adjective(data)
   local EntityMod = require("entity.adjective_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:adjectiveformat():list() / client:adjectiveformat():load({ id = ... })
+function InsultSDK:adjectiveformat(data)
+  local EntityMod = require("entity.adjectiveformat_entity")
+  if data == nil then
+    if self._adjectiveformat == nil then
+      self._adjectiveformat = EntityMod.new(self, nil)
+    end
+    return self._adjectiveformat
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:adjectiveformat() instead.
 function InsultSDK:Adjectiveformat(data)
   local EntityMod = require("entity.adjectiveformat_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:insult():list() / client:insult():load({ id = ... })
+function InsultSDK:insult(data)
+  local EntityMod = require("entity.insult_entity")
+  if data == nil then
+    if self._insult == nil then
+      self._insult = EntityMod.new(self, nil)
+    end
+    return self._insult
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:insult() instead.
 function InsultSDK:Insult(data)
   local EntityMod = require("entity.insult_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:insultformat():list() / client:insultformat():load({ id = ... })
+function InsultSDK:insultformat(data)
+  local EntityMod = require("entity.insultformat_entity")
+  if data == nil then
+    if self._insultformat == nil then
+      self._insultformat = EntityMod.new(self, nil)
+    end
+    return self._insultformat
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:insultformat() instead.
 function InsultSDK:Insultformat(data)
   local EntityMod = require("entity.insultformat_entity")
   return EntityMod.new(self, data)

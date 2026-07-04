@@ -49,8 +49,7 @@ class TestInsultEntity:
         # LOAD
         insult_ref01_ent = client.Insult(None)
         insult_ref01_match_dt0 = {}
-        insult_ref01_data_dt0_loaded, err = insult_ref01_ent.load(insult_ref01_match_dt0, None)
-        assert err is None
+        insult_ref01_data_dt0_loaded = insult_ref01_ent.load(insult_ref01_match_dt0, None)
         assert insult_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _insult_basic_setup(extra):
         "INSULT_TEST_INSULT_ENTID": idmap,
         "INSULT_TEST_LIVE": "FALSE",
         "INSULT_TEST_EXPLAIN": "FALSE",
-        "INSULT_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _insult_basic_setup(extra):
     if env.get("INSULT_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("INSULT_APIKEY"),
             },
             extra or {},
         ])

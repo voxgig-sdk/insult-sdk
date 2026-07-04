@@ -13,6 +13,9 @@ require_relative 'config'
 require_relative 'feature/base_feature'
 require_relative 'features'
 
+# Load typed models (Struct value objects).
+require_relative 'Insult_types'
+
 
 class InsultSDK
   attr_accessor :mode, :features, :options
@@ -131,7 +134,7 @@ class InsultSDK
     end
 
     _, err = utility.prepare_auth.call(ctx)
-    return nil, err if err
+    raise err if err
 
     utility.make_fetch_def.call(ctx)
   end
@@ -139,8 +142,14 @@ class InsultSDK
   def direct(fetchargs = {})
     utility = @_utility
 
-    fetchdef, err = prepare(fetchargs)
-    return { "ok" => false, "err" => err }, nil if err
+    # direct() is the raw-HTTP escape hatch: it always returns a result hash
+    # ({ "ok" => ..., ... }) and never raises. prepare() raises on error, so
+    # trap that and surface it in the hash.
+    begin
+      fetchdef = prepare(fetchargs)
+    rescue InsultError => err
+      return { "ok" => false, "err" => err }
+    end
 
     fetchargs ||= {}
     ctrl = InsultHelpers.to_map(VoxgigStruct.getprop(fetchargs, "ctrl")) || {}
@@ -153,13 +162,13 @@ class InsultSDK
     url = fetchdef["url"] || ""
     fetched, fetch_err = utility.fetcher.call(ctx, url, fetchdef)
 
-    return { "ok" => false, "err" => fetch_err }, nil if fetch_err
+    return { "ok" => false, "err" => fetch_err } if fetch_err
 
     if fetched.nil?
       return {
         "ok" => false,
         "err" => ctx.make_error("direct_no_response", "response: undefined"),
-      }, nil
+      }
     end
 
     if fetched.is_a?(Hash)
@@ -189,34 +198,62 @@ class InsultSDK
         "status" => status,
         "headers" => headers,
         "data" => json_data,
-      }, nil
+      }
     end
 
     return {
       "ok" => false,
       "err" => ctx.make_error("direct_invalid", "invalid response type"),
-    }, nil
+    }
   end
 
 
+  # Idiomatic facade: client.adjective.list / client.adjective.load({ "id" => ... })
+  def adjective
+    require_relative 'entity/adjective_entity'
+    @adjective ||= AdjectiveEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.adjective instead.
   def Adjective(data = nil)
     require_relative 'entity/adjective_entity'
     AdjectiveEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.adjectiveformat.list / client.adjectiveformat.load({ "id" => ... })
+  def adjectiveformat
+    require_relative 'entity/adjectiveformat_entity'
+    @adjectiveformat ||= AdjectiveformatEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.adjectiveformat instead.
   def Adjectiveformat(data = nil)
     require_relative 'entity/adjectiveformat_entity'
     AdjectiveformatEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.insult.list / client.insult.load({ "id" => ... })
+  def insult
+    require_relative 'entity/insult_entity'
+    @insult ||= InsultEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.insult instead.
   def Insult(data = nil)
     require_relative 'entity/insult_entity'
     InsultEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.insultformat.list / client.insultformat.load({ "id" => ... })
+  def insultformat
+    require_relative 'entity/insultformat_entity'
+    @insultformat ||= InsultformatEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.insultformat instead.
   def Insultformat(data = nil)
     require_relative 'entity/insultformat_entity'
     InsultformatEntity.new(self, data)

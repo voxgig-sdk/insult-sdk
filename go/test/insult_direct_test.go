@@ -99,14 +99,12 @@ func insultDirectSetup(mockres any) *insultDirectSetupResult {
 	env := envOverride(map[string]any{
 		"INSULT_TEST_INSULT_ENTID": map[string]any{},
 		"INSULT_TEST_LIVE":    "FALSE",
-		"INSULT_APIKEY":       "NONE",
 	})
 
 	live := env["INSULT_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["INSULT_APIKEY"],
 		}
 		client := sdk.NewInsultSDK(mergedOpts)
 

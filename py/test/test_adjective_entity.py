@@ -49,8 +49,7 @@ class TestAdjectiveEntity:
         # LOAD
         adjective_ref01_ent = client.Adjective(None)
         adjective_ref01_match_dt0 = {}
-        adjective_ref01_data_dt0_loaded, err = adjective_ref01_ent.load(adjective_ref01_match_dt0, None)
-        assert err is None
+        adjective_ref01_data_dt0_loaded = adjective_ref01_ent.load(adjective_ref01_match_dt0, None)
         assert adjective_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _adjective_basic_setup(extra):
         "INSULT_TEST_ADJECTIVE_ENTID": idmap,
         "INSULT_TEST_LIVE": "FALSE",
         "INSULT_TEST_EXPLAIN": "FALSE",
-        "INSULT_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _adjective_basic_setup(extra):
     if env.get("INSULT_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("INSULT_APIKEY"),
             },
             extra or {},
         ])

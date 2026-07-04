@@ -49,8 +49,7 @@ class TestAdjectiveformatEntity:
         # LOAD
         adjectiveformat_ref01_ent = client.Adjectiveformat(None)
         adjectiveformat_ref01_match_dt0 = {}
-        adjectiveformat_ref01_data_dt0_loaded, err = adjectiveformat_ref01_ent.load(adjectiveformat_ref01_match_dt0, None)
-        assert err is None
+        adjectiveformat_ref01_data_dt0_loaded = adjectiveformat_ref01_ent.load(adjectiveformat_ref01_match_dt0, None)
         assert adjectiveformat_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _adjectiveformat_basic_setup(extra):
         "INSULT_TEST_ADJECTIVEFORMAT_ENTID": idmap,
         "INSULT_TEST_LIVE": "FALSE",
         "INSULT_TEST_EXPLAIN": "FALSE",
-        "INSULT_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _adjectiveformat_basic_setup(extra):
     if env.get("INSULT_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("INSULT_APIKEY"),
             },
             extra or {},
         ])

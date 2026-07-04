@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -146,7 +145,7 @@ Alias for `InsultSDK.test()`.
 ## AdjectiveEntity
 
 ```ts
-const adjective = client.Adjective()
+const adjective = client.adjective
 ```
 
 ### Operations
@@ -156,7 +155,7 @@ const adjective = client.Adjective()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Adjective().load({ id: 'adjective_id' })
+const result = await client.adjective.load({ id: 'adjective_id' })
 ```
 
 ### Common Methods
@@ -190,7 +189,7 @@ Return a copy of the entity options.
 ## AdjectiveformatEntity
 
 ```ts
-const adjectiveformat = client.Adjectiveformat()
+const adjectiveformat = client.adjectiveformat
 ```
 
 ### Operations
@@ -200,7 +199,7 @@ const adjectiveformat = client.Adjectiveformat()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Adjectiveformat().load({ id: 'adjectiveformat_id' })
+const result = await client.adjectiveformat.load({ id: 'adjectiveformat_id' })
 ```
 
 ### Common Methods
@@ -234,7 +233,7 @@ Return a copy of the entity options.
 ## InsultEntity
 
 ```ts
-const insult = client.Insult()
+const insult = client.insult
 ```
 
 ### Operations
@@ -244,7 +243,7 @@ const insult = client.Insult()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Insult().load({ id: 'insult_id' })
+const result = await client.insult.load({ id: 'insult_id' })
 ```
 
 ### Common Methods
@@ -278,7 +277,7 @@ Return a copy of the entity options.
 ## InsultformatEntity
 
 ```ts
-const insultformat = client.Insultformat()
+const insultformat = client.insultformat
 ```
 
 ### Operations
@@ -288,7 +287,7 @@ const insultformat = client.Insultformat()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Insultformat().load({ id: 'insultformat_id' })
+const result = await client.insultformat.load({ id: 'insultformat_id' })
 ```
 
 ### Common Methods

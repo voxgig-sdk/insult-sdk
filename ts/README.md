@@ -9,9 +9,12 @@ The TypeScript SDK for the Insult API — a type-safe, entity-oriented client wi
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/insult
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/insult-sdk/releases](https://github.com/voxgig-sdk/insult-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { InsultSDK } from 'insult'
+import { InsultSDK } from '@voxgig-sdk/insult'
 
-const client = new InsultSDK({
-  apikey: process.env.INSULT_APIKEY,
-})
+const client = new InsultSDK()
 ```
 
-### 3. Load a adjective
+### 3. Load an adjective
 
 ```ts
-const result = await client.Adjective().load({ id: 'example_id' })
+const result = await client.adjective.load({ id: 'example_id' })
 
 if (result.ok) {
   console.log(result.data)
@@ -79,7 +80,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = InsultSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.adjective.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -87,7 +88,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new InsultSDK({ apikey: '...' })
+const client = new InsultSDK()
 const testClient = client.tester()
 ```
 
@@ -96,7 +97,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.adjective
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -123,7 +124,6 @@ const logger = {
 }
 
 const client = new InsultSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -134,7 +134,6 @@ Create a `.env.local` file at the project root:
 
 ```
 INSULT_TEST_LIVE=TRUE
-INSULT_APIKEY=<your-key>
 ```
 
 Then run:
@@ -152,7 +151,6 @@ cd ts && npm test
 
 ```ts
 new InsultSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -163,7 +161,6 @@ new InsultSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -295,7 +292,7 @@ API path: `/insult.{format}`
 
 ### Adjective
 
-Create an instance: `const adjective = client.Adjective()`
+Create an instance: `const adjective = client.adjective`
 
 #### Operations
 
@@ -306,13 +303,13 @@ Create an instance: `const adjective = client.Adjective()`
 #### Example: Load
 
 ```ts
-const adjective = await client.Adjective().load({ id: 'adjective_id' })
+const adjective = await client.adjective.load({ id: 'adjective_id' })
 ```
 
 
 ### Adjectiveformat
 
-Create an instance: `const adjectiveformat = client.Adjectiveformat()`
+Create an instance: `const adjectiveformat = client.adjectiveformat`
 
 #### Operations
 
@@ -323,13 +320,13 @@ Create an instance: `const adjectiveformat = client.Adjectiveformat()`
 #### Example: Load
 
 ```ts
-const adjectiveformat = await client.Adjectiveformat().load({ id: 'adjectiveformat_id' })
+const adjectiveformat = await client.adjectiveformat.load({ id: 'adjectiveformat_id' })
 ```
 
 
 ### Insult
 
-Create an instance: `const insult = client.Insult()`
+Create an instance: `const insult = client.insult`
 
 #### Operations
 
@@ -340,13 +337,13 @@ Create an instance: `const insult = client.Insult()`
 #### Example: Load
 
 ```ts
-const insult = await client.Insult().load({ id: 'insult_id' })
+const insult = await client.insult.load({ id: 'insult_id' })
 ```
 
 
 ### Insultformat
 
-Create an instance: `const insultformat = client.Insultformat()`
+Create an instance: `const insultformat = client.insultformat`
 
 #### Operations
 
@@ -357,7 +354,7 @@ Create an instance: `const insultformat = client.Insultformat()`
 #### Example: Load
 
 ```ts
-const insultformat = await client.Insultformat().load({ id: 'insultformat_id' })
+const insultformat = await client.insultformat.load({ id: 'insultformat_id' })
 ```
 
 
@@ -418,7 +415,7 @@ insult/
 Import the SDK from the package root:
 
 ```ts
-import { InsultSDK } from 'insult'
+import { InsultSDK } from '@voxgig-sdk/insult'
 ```
 
 ### Entity state
@@ -428,11 +425,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const adjective = client.adjective
+await adjective.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// adjective.data() now returns the loaded adjective data
+// adjective.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

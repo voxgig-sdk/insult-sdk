@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'https://insult.mattbas.org/api',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },
@@ -130,7 +126,8 @@ class Config {
                     "name": "format",
                     "orig": "format",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ],
                 "query": [
@@ -172,7 +169,8 @@ class Config {
                     "name": "format",
                     "orig": "format",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   },
                   {
                     "active": true,
@@ -180,7 +178,8 @@ class Config {
                     "name": "lang",
                     "orig": "lang",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 1
                   }
                 ]
               },
@@ -302,7 +301,8 @@ class Config {
                     "name": "format",
                     "orig": "format",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ],
                 "query": [
@@ -371,7 +371,8 @@ class Config {
                     "name": "format",
                     "orig": "format",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   },
                   {
                     "active": true,
@@ -379,7 +380,8 @@ class Config {
                     "name": "lang",
                     "orig": "lang",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 1
                   }
                 ],
                 "query": [

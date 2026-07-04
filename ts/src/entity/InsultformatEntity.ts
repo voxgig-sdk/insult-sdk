@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Insultformat,
+  InsultformatLoadMatch,
+} from '../InsultTypes'
 
 // TODO: needs Entity superclass
-class InsultformatEntity extends InsultEntityBase {
+class InsultformatEntity extends InsultEntityBase<Insultformat> {
 
   constructor(client: InsultSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class InsultformatEntity extends InsultEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: InsultformatLoadMatch, ctrl?: Control): Promise<Insultformat> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class InsultformatEntity extends InsultEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Insultformat> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

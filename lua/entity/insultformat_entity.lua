@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch InsultformatLoadMatch
+---@param ctrl? table
+---@return Insultformat
+---@return string? err
 function InsultformatEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

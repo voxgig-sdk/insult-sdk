@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch InsultLoadMatch
+---@param ctrl? table
+---@return Insult
+---@return string? err
 function InsultEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

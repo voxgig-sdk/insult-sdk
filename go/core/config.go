@@ -14,9 +14,6 @@ func MakeConfig() map[string]any {
 		},
 		"options": map[string]any{
 			"base": "https://insult.mattbas.org/api",
-			"auth": map[string]any{
-				"prefix": "Bearer",
-			},
 			"headers": map[string]any{
 				"content-type": "application/json",
 			},
@@ -94,6 +91,7 @@ func MakeConfig() map[string]any {
 											"orig": "format",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 0,
 										},
 									},
 									"query": []any{
@@ -136,6 +134,7 @@ func MakeConfig() map[string]any {
 											"orig": "format",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 0,
 										},
 										map[string]any{
 											"active": true,
@@ -144,6 +143,7 @@ func MakeConfig() map[string]any {
 											"orig": "lang",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 1,
 										},
 									},
 								},
@@ -266,6 +266,7 @@ func MakeConfig() map[string]any {
 											"orig": "format",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 0,
 										},
 									},
 									"query": []any{
@@ -335,6 +336,7 @@ func MakeConfig() map[string]any {
 											"orig": "format",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 0,
 										},
 										map[string]any{
 											"active": true,
@@ -343,6 +345,7 @@ func MakeConfig() map[string]any {
 											"orig": "lang",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 1,
 										},
 									},
 									"query": []any{
