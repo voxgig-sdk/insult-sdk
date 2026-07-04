@@ -33,9 +33,10 @@ $client = new InsultSDK();
 
 ```php
 try {
-    $result = $client->adjective()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare Adjective record (throws on error).
+    $adjective = $client->Adjective()->load(["id" => "example_id"]);
+    print_r($adjective);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -81,13 +82,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = InsultSDK::test();
+$client = InsultSDK::test([
+    "entity" => ["adjective" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->adjective()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$adjective = $client->Adjective()->load(["id" => "test01"]);
+print_r($adjective);
 ```
 
 ### Use a custom fetch function
@@ -166,10 +171,10 @@ Creates a test-mode client with mock transport. Both arguments may be `null`.
 | `get_utility` | `(): Utility` | Copy of the SDK utility object. |
 | `prepare` | `(array $fetchargs): array` | Build an HTTP request definition without sending. |
 | `direct` | `(array $fetchargs): array` | Build and send an HTTP request. |
-| `Adjective` | `($data): AdjectiveEntity` | Create a Adjective entity instance. |
-| `Adjectiveformat` | `($data): AdjectiveformatEntity` | Create a Adjectiveformat entity instance. |
-| `Insult` | `($data): InsultEntity` | Create a Insult entity instance. |
-| `Insultformat` | `($data): InsultformatEntity` | Create a Insultformat entity instance. |
+| `Adjective` | `($data): AdjectiveEntity` | Create an Adjective entity instance. |
+| `Adjectiveformat` | `($data): AdjectiveformatEntity` | Create an Adjectiveformat entity instance. |
+| `Insult` | `($data): InsultEntity` | Create an Insult entity instance. |
+| `Insultformat` | `($data): InsultformatEntity` | Create an Insultformat entity instance. |
 
 ### Entity interface
 
@@ -252,7 +257,7 @@ API path: `/insult.{format}`
 
 ### Adjective
 
-Create an instance: `const adjective = client.adjective`
+Create an instance: `$adjective = $client->Adjective();`
 
 #### Operations
 
@@ -262,14 +267,15 @@ Create an instance: `const adjective = client.adjective`
 
 #### Example: Load
 
-```ts
-const adjective = await client.adjective.load({ id: 'adjective_id' })
+```php
+// load() returns the bare Adjective record (throws on error).
+$adjective = $client->Adjective()->load(["id" => "adjective_id"]);
 ```
 
 
 ### Adjectiveformat
 
-Create an instance: `const adjectiveformat = client.adjectiveformat`
+Create an instance: `$adjectiveformat = $client->Adjectiveformat();`
 
 #### Operations
 
@@ -279,14 +285,15 @@ Create an instance: `const adjectiveformat = client.adjectiveformat`
 
 #### Example: Load
 
-```ts
-const adjectiveformat = await client.adjectiveformat.load({ id: 'adjectiveformat_id' })
+```php
+// load() returns the bare Adjectiveformat record (throws on error).
+$adjectiveformat = $client->Adjectiveformat()->load(["id" => "adjectiveformat_id"]);
 ```
 
 
 ### Insult
 
-Create an instance: `const insult = client.insult`
+Create an instance: `$insult = $client->Insult();`
 
 #### Operations
 
@@ -296,14 +303,15 @@ Create an instance: `const insult = client.insult`
 
 #### Example: Load
 
-```ts
-const insult = await client.insult.load({ id: 'insult_id' })
+```php
+// load() returns the bare Insult record (throws on error).
+$insult = $client->Insult()->load(["id" => "insult_id"]);
 ```
 
 
 ### Insultformat
 
-Create an instance: `const insultformat = client.insultformat`
+Create an instance: `$insultformat = $client->Insultformat();`
 
 #### Operations
 
@@ -313,8 +321,9 @@ Create an instance: `const insultformat = client.insultformat`
 
 #### Example: Load
 
-```ts
-const insultformat = await client.insultformat.load({ id: 'insultformat_id' })
+```php
+// load() returns the bare Insultformat record (throws on error).
+$insultformat = $client->Insultformat()->load(["id" => "insultformat_id"]);
 ```
 
 
@@ -389,7 +398,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$adjective = $client->adjective();
+$adjective = $client->Adjective();
 $adjective->load(["id" => "example_id"]);
 
 // $adjective->dataGet() now returns the loaded adjective data

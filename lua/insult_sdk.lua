@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:adjective():list() / client:adjective():load({ id = ... })
-function InsultSDK:adjective(data)
+-- Idiomatic facade: client:Adjective():list() / client:Adjective():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function InsultSDK:Adjective(data)
   local EntityMod = require("entity.adjective_entity")
   if data == nil then
     if self._adjective == nil then
@@ -256,15 +257,10 @@ function InsultSDK:adjective(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:adjective() instead.
-function InsultSDK:Adjective(data)
-  local EntityMod = require("entity.adjective_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:adjectiveformat():list() / client:adjectiveformat():load({ id = ... })
-function InsultSDK:adjectiveformat(data)
+-- Idiomatic facade: client:Adjectiveformat():list() / client:Adjectiveformat():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function InsultSDK:Adjectiveformat(data)
   local EntityMod = require("entity.adjectiveformat_entity")
   if data == nil then
     if self._adjectiveformat == nil then
@@ -275,15 +271,10 @@ function InsultSDK:adjectiveformat(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:adjectiveformat() instead.
-function InsultSDK:Adjectiveformat(data)
-  local EntityMod = require("entity.adjectiveformat_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:insult():list() / client:insult():load({ id = ... })
-function InsultSDK:insult(data)
+-- Idiomatic facade: client:Insult():list() / client:Insult():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function InsultSDK:Insult(data)
   local EntityMod = require("entity.insult_entity")
   if data == nil then
     if self._insult == nil then
@@ -294,15 +285,10 @@ function InsultSDK:insult(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:insult() instead.
-function InsultSDK:Insult(data)
-  local EntityMod = require("entity.insult_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:insultformat():list() / client:insultformat():load({ id = ... })
-function InsultSDK:insultformat(data)
+-- Idiomatic facade: client:Insultformat():list() / client:Insultformat():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function InsultSDK:Insultformat(data)
   local EntityMod = require("entity.insultformat_entity")
   if data == nil then
     if self._insultformat == nil then
@@ -310,12 +296,6 @@ function InsultSDK:insultformat(data)
     end
     return self._insultformat
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:insultformat() instead.
-function InsultSDK:Insultformat(data)
-  local EntityMod = require("entity.insultformat_entity")
   return EntityMod.new(self, data)
 end
 

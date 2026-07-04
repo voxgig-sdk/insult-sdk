@@ -26,9 +26,9 @@ import { InsultSDK } from '@voxgig-sdk/insult'
 
 const client = new InsultSDK()
 
-// Load adjective data
-const adjective = await client.adjective.load({})
-console.log(adjective.data)
+// Load adjective data (returns a Adjective)
+const adjective = await client.Adjective().load()
+console.log(adjective)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -87,8 +87,8 @@ from insult_sdk import InsultSDK
 client = InsultSDK()
 
 
-# Load a specific adjective
-adjective = client.adjective.load({"id": "example_id"})
+# Load a specific adjective (returns the record, raises on error)
+adjective = client.Adjective().load({"id": "example_id"})
 print(adjective)
 ```
 
@@ -101,8 +101,8 @@ require_once 'insult_sdk.php';
 $client = new InsultSDK();
 
 
-// Load a specific adjective
-$adjective = $client->adjective()->load(["id" => "example_id"]);
+// Load a specific adjective (returns the bare record; throws on error)
+$adjective = $client->Adjective()->load(["id" => "example_id"]);
 print_r($adjective);
 ```
 
@@ -126,8 +126,8 @@ require_relative "Insult_sdk"
 client = InsultSDK.new
 
 
-# Load a specific adjective
-adjective = client.adjective.load({ "id" => "example_id" })
+# Load a specific adjective (returns the bare record; raises on error)
+adjective = client.Adjective.load({ "id" => "example_id" })
 puts adjective
 ```
 
@@ -140,7 +140,7 @@ local client = sdk.new()
 
 
 -- Load a specific adjective
-local adjective, err = client:adjective():load({ id = "example_id" })
+local adjective, err = client:Adjective():load({ id = "example_id" })
 print(adjective)
 ```
 
@@ -153,22 +153,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = InsultSDK.test()
-const result = await client.adjective.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const adjective = await client.Adjective().load({ id: 'test01' })
+// adjective is a bare Adjective populated with mock data
+console.log(adjective)
 ```
 
 ### Python
 
 ```python
 client = InsultSDK.test()
-result = client.adjective.load({"id": "test01"})
+adjective = client.Adjective().load({"id": "test01"})
+print(adjective)
 ```
 
 ### PHP
 
 ```php
-$client = InsultSDK::test();
-$result = $client->adjective()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = InsultSDK::test([
+    "entity" => ["adjective" => ["test01" => ["id" => "test01"]]],
+]);
+$adjective = $client->Adjective()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -183,15 +188,18 @@ result, err := client.Adjective(nil).Load(
 ### Ruby
 
 ```ruby
-client = InsultSDK.test
-result = client.adjective.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = InsultSDK.test({
+  "entity" => { "adjective" => { "test01" => { "id" => "test01" } } },
+})
+adjective = client.Adjective.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:adjective():load({ id = "test01" })
+local result, err = client:Adjective():load({ id = "test01" })
 ```
 
 ## How it works
@@ -239,6 +247,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

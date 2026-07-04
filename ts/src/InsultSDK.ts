@@ -207,56 +207,28 @@ class InsultSDK {
 
 
 
-  _adjective?: AdjectiveEntity
-
-  // Idiomatic facade: `client.adjective.list()` / `client.adjective.load({ id })`.
-  get adjective(): AdjectiveEntity {
-    return (this._adjective ??= new AdjectiveEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.adjective` instead. */
+  // Entity access: `client.Adjective().list()` / `client.Adjective().load({ id })`.
   Adjective(data?: any) {
     const self = this
     return new AdjectiveEntity(self,data)
   }
 
 
-  _adjectiveformat?: AdjectiveformatEntity
-
-  // Idiomatic facade: `client.adjectiveformat.list()` / `client.adjectiveformat.load({ id })`.
-  get adjectiveformat(): AdjectiveformatEntity {
-    return (this._adjectiveformat ??= new AdjectiveformatEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.adjectiveformat` instead. */
+  // Entity access: `client.Adjectiveformat().list()` / `client.Adjectiveformat().load({ id })`.
   Adjectiveformat(data?: any) {
     const self = this
     return new AdjectiveformatEntity(self,data)
   }
 
 
-  _insult?: InsultEntity
-
-  // Idiomatic facade: `client.insult.list()` / `client.insult.load({ id })`.
-  get insult(): InsultEntity {
-    return (this._insult ??= new InsultEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.insult` instead. */
+  // Entity access: `client.Insult().list()` / `client.Insult().load({ id })`.
   Insult(data?: any) {
     const self = this
     return new InsultEntity(self,data)
   }
 
 
-  _insultformat?: InsultformatEntity
-
-  // Idiomatic facade: `client.insultformat.list()` / `client.insultformat.load({ id })`.
-  get insultformat(): InsultformatEntity {
-    return (this._insultformat ??= new InsultformatEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.insultformat` instead. */
+  // Entity access: `client.Insultformat().list()` / `client.Insultformat().load({ id })`.
   Insultformat(data?: any) {
     const self = this
     return new InsultformatEntity(self,data)

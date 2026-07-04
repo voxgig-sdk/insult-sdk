@@ -233,10 +233,10 @@ class InsultSDK
 
     private $_adjective = null;
 
-    // Idiomatic facade: $client->adjective()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Adjective() (PHP method
-    // names are case-insensitive).
-    public function adjective($data = null)
+    // Canonical facade: $client->Adjective()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->adjective()
+    // resolves here too.
+    public function Adjective($data = null)
     {
         require_once __DIR__ . '/entity/adjective_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class InsultSDK
 
     private $_adjectiveformat = null;
 
-    // Idiomatic facade: $client->adjectiveformat()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Adjectiveformat() (PHP method
-    // names are case-insensitive).
-    public function adjectiveformat($data = null)
+    // Canonical facade: $client->Adjectiveformat()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->adjectiveformat()
+    // resolves here too.
+    public function Adjectiveformat($data = null)
     {
         require_once __DIR__ . '/entity/adjectiveformat_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class InsultSDK
 
     private $_insult = null;
 
-    // Idiomatic facade: $client->insult()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Insult() (PHP method
-    // names are case-insensitive).
-    public function insult($data = null)
+    // Canonical facade: $client->Insult()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->insult()
+    // resolves here too.
+    public function Insult($data = null)
     {
         require_once __DIR__ . '/entity/insult_entity.php';
         if ($data === null) {
@@ -287,10 +287,10 @@ class InsultSDK
 
     private $_insultformat = null;
 
-    // Idiomatic facade: $client->insultformat()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Insultformat() (PHP method
-    // names are case-insensitive).
-    public function insultformat($data = null)
+    // Canonical facade: $client->Insultformat()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->insultformat()
+    // resolves here too.
+    public function Insultformat($data = null)
     {
         require_once __DIR__ . '/entity/insultformat_entity.php';
         if ($data === null) {

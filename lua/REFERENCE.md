@@ -95,7 +95,7 @@ same parameters as `direct()`.
 ## AdjectiveEntity
 
 ```lua
-local adjective = client:adjective(nil)
+local adjective = client:Adjective(nil)
 ```
 
 ### Operations
@@ -105,7 +105,7 @@ local adjective = client:adjective(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:adjective():load({ id = "adjective_id" })
+local result, err = client:Adjective():load({ id = "adjective_id" })
 ```
 
 ### Common Methods
@@ -141,7 +141,7 @@ Return the entity name.
 ## AdjectiveformatEntity
 
 ```lua
-local adjectiveformat = client:adjectiveformat(nil)
+local adjectiveformat = client:Adjectiveformat(nil)
 ```
 
 ### Operations
@@ -151,7 +151,7 @@ local adjectiveformat = client:adjectiveformat(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:adjectiveformat():load({ id = "adjectiveformat_id" })
+local result, err = client:Adjectiveformat():load({ id = "adjectiveformat_id" })
 ```
 
 ### Common Methods
@@ -187,7 +187,7 @@ Return the entity name.
 ## InsultEntity
 
 ```lua
-local insult = client:insult(nil)
+local insult = client:Insult(nil)
 ```
 
 ### Operations
@@ -197,7 +197,7 @@ local insult = client:insult(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:insult():load({ id = "insult_id" })
+local result, err = client:Insult():load({ id = "insult_id" })
 ```
 
 ### Common Methods
@@ -233,7 +233,7 @@ Return the entity name.
 ## InsultformatEntity
 
 ```lua
-local insultformat = client:insultformat(nil)
+local insultformat = client:Insultformat(nil)
 ```
 
 ### Operations
@@ -243,7 +243,7 @@ local insultformat = client:insultformat(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:insultformat():load({ id = "insultformat_id" })
+local result, err = client:Insultformat():load({ id = "insultformat_id" })
 ```
 
 ### Common Methods

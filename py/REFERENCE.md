@@ -92,7 +92,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## AdjectiveEntity
 
 ```python
-adjective = client.adjective
+adjective = client.Adjective()
 ```
 
 ### Operations
@@ -102,7 +102,7 @@ adjective = client.adjective
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.adjective.load({"id": "adjective_id"})
+result = client.Adjective().load({"id": "adjective_id"})
 ```
 
 ### Common Methods
@@ -137,7 +137,7 @@ Return the entity name.
 ## AdjectiveformatEntity
 
 ```python
-adjectiveformat = client.adjectiveformat
+adjectiveformat = client.Adjectiveformat()
 ```
 
 ### Operations
@@ -147,7 +147,7 @@ adjectiveformat = client.adjectiveformat
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.adjectiveformat.load({"id": "adjectiveformat_id"})
+result = client.Adjectiveformat().load({"id": "adjectiveformat_id"})
 ```
 
 ### Common Methods
@@ -182,7 +182,7 @@ Return the entity name.
 ## InsultEntity
 
 ```python
-insult = client.insult
+insult = client.Insult()
 ```
 
 ### Operations
@@ -192,7 +192,7 @@ insult = client.insult
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.insult.load({"id": "insult_id"})
+result = client.Insult().load({"id": "insult_id"})
 ```
 
 ### Common Methods
@@ -227,7 +227,7 @@ Return the entity name.
 ## InsultformatEntity
 
 ```python
-insultformat = client.insultformat
+insultformat = client.Insultformat()
 ```
 
 ### Operations
@@ -237,7 +237,7 @@ insultformat = client.insultformat
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.insultformat.load({"id": "insultformat_id"})
+result = client.Insultformat().load({"id": "insultformat_id"})
 ```
 
 ### Common Methods

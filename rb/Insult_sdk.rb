@@ -208,52 +208,28 @@ class InsultSDK
   end
 
 
-  # Idiomatic facade: client.adjective.list / client.adjective.load({ "id" => ... })
-  def adjective
-    require_relative 'entity/adjective_entity'
-    @adjective ||= AdjectiveEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.adjective instead.
+  # Canonical facade: client.Adjective.list / client.Adjective.load({ "id" => ... })
   def Adjective(data = nil)
     require_relative 'entity/adjective_entity'
     AdjectiveEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.adjectiveformat.list / client.adjectiveformat.load({ "id" => ... })
-  def adjectiveformat
-    require_relative 'entity/adjectiveformat_entity'
-    @adjectiveformat ||= AdjectiveformatEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.adjectiveformat instead.
+  # Canonical facade: client.Adjectiveformat.list / client.Adjectiveformat.load({ "id" => ... })
   def Adjectiveformat(data = nil)
     require_relative 'entity/adjectiveformat_entity'
     AdjectiveformatEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.insult.list / client.insult.load({ "id" => ... })
-  def insult
-    require_relative 'entity/insult_entity'
-    @insult ||= InsultEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.insult instead.
+  # Canonical facade: client.Insult.list / client.Insult.load({ "id" => ... })
   def Insult(data = nil)
     require_relative 'entity/insult_entity'
     InsultEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.insultformat.list / client.insultformat.load({ "id" => ... })
-  def insultformat
-    require_relative 'entity/insultformat_entity'
-    @insultformat ||= InsultformatEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.insultformat instead.
+  # Canonical facade: client.Insultformat.list / client.Insultformat.load({ "id" => ... })
   def Insultformat(data = nil)
     require_relative 'entity/insultformat_entity'
     InsultformatEntity.new(self, data)

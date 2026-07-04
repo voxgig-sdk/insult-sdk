@@ -33,10 +33,12 @@ client = InsultSDK()
 
 ### 3. Load an adjective
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.adjective.load({"id": "example_id"})
-    print(result)
+    adjective = client.Adjective().load({"id": "example_id"})
+    print(adjective)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = InsultSDK.test()
 
-result = client.adjective.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+adjective = client.Adjective().load({"id": "test01"})
+# adjective contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -161,10 +164,10 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
-| `Adjective` | `(data) -> AdjectiveEntity` | Create a Adjective entity instance. |
-| `Adjectiveformat` | `(data) -> AdjectiveformatEntity` | Create a Adjectiveformat entity instance. |
-| `Insult` | `(data) -> InsultEntity` | Create a Insult entity instance. |
-| `Insultformat` | `(data) -> InsultformatEntity` | Create a Insultformat entity instance. |
+| `Adjective` | `(data) -> AdjectiveEntity` | Create an Adjective entity instance. |
+| `Adjectiveformat` | `(data) -> AdjectiveformatEntity` | Create an Adjectiveformat entity instance. |
+| `Insult` | `(data) -> InsultEntity` | Create an Insult entity instance. |
+| `Insultformat` | `(data) -> InsultformatEntity` | Create an Insultformat entity instance. |
 
 ### Entity interface
 
@@ -247,7 +250,7 @@ API path: `/insult.{format}`
 
 ### Adjective
 
-Create an instance: `const adjective = client.adjective`
+Create an instance: `adjective = client.Adjective()`
 
 #### Operations
 
@@ -257,14 +260,14 @@ Create an instance: `const adjective = client.adjective`
 
 #### Example: Load
 
-```ts
-const adjective = await client.adjective.load({ id: 'adjective_id' })
+```python
+adjective = client.Adjective().load({"id": "adjective_id"})
 ```
 
 
 ### Adjectiveformat
 
-Create an instance: `const adjectiveformat = client.adjectiveformat`
+Create an instance: `adjectiveformat = client.Adjectiveformat()`
 
 #### Operations
 
@@ -274,14 +277,14 @@ Create an instance: `const adjectiveformat = client.adjectiveformat`
 
 #### Example: Load
 
-```ts
-const adjectiveformat = await client.adjectiveformat.load({ id: 'adjectiveformat_id' })
+```python
+adjectiveformat = client.Adjectiveformat().load({"id": "adjectiveformat_id"})
 ```
 
 
 ### Insult
 
-Create an instance: `const insult = client.insult`
+Create an instance: `insult = client.Insult()`
 
 #### Operations
 
@@ -291,14 +294,14 @@ Create an instance: `const insult = client.insult`
 
 #### Example: Load
 
-```ts
-const insult = await client.insult.load({ id: 'insult_id' })
+```python
+insult = client.Insult().load({"id": "insult_id"})
 ```
 
 
 ### Insultformat
 
-Create an instance: `const insultformat = client.insultformat`
+Create an instance: `insultformat = client.Insultformat()`
 
 #### Operations
 
@@ -308,8 +311,8 @@ Create an instance: `const insultformat = client.insultformat`
 
 #### Example: Load
 
-```ts
-const insultformat = await client.insultformat.load({ id: 'insultformat_id' })
+```python
+insultformat = client.Insultformat().load({"id": "insultformat_id"})
 ```
 
 
@@ -383,7 +386,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-adjective = client.adjective
+adjective = client.Adjective()
 adjective.load({"id": "example_id"})
 
 # adjective.data_get() now returns the loaded adjective data

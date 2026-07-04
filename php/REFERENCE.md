@@ -97,7 +97,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## AdjectiveEntity
 
 ```php
-$adjective = $client->adjective();
+$adjective = $client->Adjective();
 ```
 
 ### Operations
@@ -107,7 +107,7 @@ $adjective = $client->adjective();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->adjective()->load(["id" => "adjective_id"]);
+$result = $client->Adjective()->load(["id" => "adjective_id"]);
 ```
 
 ### Common Methods
@@ -143,7 +143,7 @@ Return the entity name.
 ## AdjectiveformatEntity
 
 ```php
-$adjectiveformat = $client->adjectiveformat();
+$adjectiveformat = $client->Adjectiveformat();
 ```
 
 ### Operations
@@ -153,7 +153,7 @@ $adjectiveformat = $client->adjectiveformat();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->adjectiveformat()->load(["id" => "adjectiveformat_id"]);
+$result = $client->Adjectiveformat()->load(["id" => "adjectiveformat_id"]);
 ```
 
 ### Common Methods
@@ -189,7 +189,7 @@ Return the entity name.
 ## InsultEntity
 
 ```php
-$insult = $client->insult();
+$insult = $client->Insult();
 ```
 
 ### Operations
@@ -199,7 +199,7 @@ $insult = $client->insult();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->insult()->load(["id" => "insult_id"]);
+$result = $client->Insult()->load(["id" => "insult_id"]);
 ```
 
 ### Common Methods
@@ -235,7 +235,7 @@ Return the entity name.
 ## InsultformatEntity
 
 ```php
-$insultformat = $client->insultformat();
+$insultformat = $client->Insultformat();
 ```
 
 ### Operations
@@ -245,7 +245,7 @@ $insultformat = $client->insultformat();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->insultformat()->load(["id" => "insultformat_id"]);
+$result = $client->Insultformat()->load(["id" => "insultformat_id"]);
 ```
 
 ### Common Methods

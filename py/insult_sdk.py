@@ -220,73 +220,33 @@ class InsultSDK:
         }
 
 
-    @property
-    def adjective(self):
-        """Idiomatic facade: client.adjective.list() / client.adjective.load({"id": ...})."""
-        from entity.adjective_entity import AdjectiveEntity
-        cached = getattr(self, "_adjective", None)
-        if cached is None:
-            cached = AdjectiveEntity(self, None)
-            self._adjective = cached
-        return cached
-
-    def Adjective(self, data=None):
-        # Deprecated: use client.adjective instead.
+    def Adjective(self, data=None) -> "AdjectiveEntity":
+        """Entity factory: client.Adjective().list({}) / client.Adjective().load({"id": ...})."""
         from entity.adjective_entity import AdjectiveEntity
         return AdjectiveEntity(self, data)
 
 
-    @property
-    def adjectiveformat(self):
-        """Idiomatic facade: client.adjectiveformat.list() / client.adjectiveformat.load({"id": ...})."""
-        from entity.adjectiveformat_entity import AdjectiveformatEntity
-        cached = getattr(self, "_adjectiveformat", None)
-        if cached is None:
-            cached = AdjectiveformatEntity(self, None)
-            self._adjectiveformat = cached
-        return cached
-
-    def Adjectiveformat(self, data=None):
-        # Deprecated: use client.adjectiveformat instead.
+    def Adjectiveformat(self, data=None) -> "AdjectiveformatEntity":
+        """Entity factory: client.Adjectiveformat().list({}) / client.Adjectiveformat().load({"id": ...})."""
         from entity.adjectiveformat_entity import AdjectiveformatEntity
         return AdjectiveformatEntity(self, data)
 
 
-    @property
-    def insult(self):
-        """Idiomatic facade: client.insult.list() / client.insult.load({"id": ...})."""
-        from entity.insult_entity import InsultEntity
-        cached = getattr(self, "_insult", None)
-        if cached is None:
-            cached = InsultEntity(self, None)
-            self._insult = cached
-        return cached
-
-    def Insult(self, data=None):
-        # Deprecated: use client.insult instead.
+    def Insult(self, data=None) -> "InsultEntity":
+        """Entity factory: client.Insult().list({}) / client.Insult().load({"id": ...})."""
         from entity.insult_entity import InsultEntity
         return InsultEntity(self, data)
 
 
-    @property
-    def insultformat(self):
-        """Idiomatic facade: client.insultformat.list() / client.insultformat.load({"id": ...})."""
-        from entity.insultformat_entity import InsultformatEntity
-        cached = getattr(self, "_insultformat", None)
-        if cached is None:
-            cached = InsultformatEntity(self, None)
-            self._insultformat = cached
-        return cached
-
-    def Insultformat(self, data=None):
-        # Deprecated: use client.insultformat instead.
+    def Insultformat(self, data=None) -> "InsultformatEntity":
+        """Entity factory: client.Insultformat().list({}) / client.Insultformat().load({"id": ...})."""
         from entity.insultformat_entity import InsultformatEntity
         return InsultformatEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "InsultSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -306,3 +266,12 @@ class InsultSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.adjective_entity import AdjectiveEntity
+    from entity.adjectiveformat_entity import AdjectiveformatEntity
+    from entity.insult_entity import InsultEntity
+    from entity.insultformat_entity import InsultformatEntity

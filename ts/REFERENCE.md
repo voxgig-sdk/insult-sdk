@@ -145,7 +145,7 @@ Alias for `InsultSDK.test()`.
 ## AdjectiveEntity
 
 ```ts
-const adjective = client.adjective
+const adjective = client.Adjective()
 ```
 
 ### Operations
@@ -155,7 +155,7 @@ const adjective = client.adjective
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.adjective.load({ id: 'adjective_id' })
+const result = await client.Adjective().load({ id: 'adjective_id' })
 ```
 
 ### Common Methods
@@ -189,7 +189,7 @@ Return a copy of the entity options.
 ## AdjectiveformatEntity
 
 ```ts
-const adjectiveformat = client.adjectiveformat
+const adjectiveformat = client.Adjectiveformat()
 ```
 
 ### Operations
@@ -199,7 +199,7 @@ const adjectiveformat = client.adjectiveformat
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.adjectiveformat.load({ id: 'adjectiveformat_id' })
+const result = await client.Adjectiveformat().load({ id: 'adjectiveformat_id' })
 ```
 
 ### Common Methods
@@ -233,7 +233,7 @@ Return a copy of the entity options.
 ## InsultEntity
 
 ```ts
-const insult = client.insult
+const insult = client.Insult()
 ```
 
 ### Operations
@@ -243,7 +243,7 @@ const insult = client.insult
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.insult.load({ id: 'insult_id' })
+const result = await client.Insult().load({ id: 'insult_id' })
 ```
 
 ### Common Methods
@@ -277,7 +277,7 @@ Return a copy of the entity options.
 ## InsultformatEntity
 
 ```ts
-const insultformat = client.insultformat
+const insultformat = client.Insultformat()
 ```
 
 ### Operations
@@ -287,7 +287,7 @@ const insultformat = client.insultformat
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.insultformat.load({ id: 'insultformat_id' })
+const result = await client.Insultformat().load({ id: 'insultformat_id' })
 ```
 
 ### Common Methods
