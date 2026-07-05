@@ -8,7 +8,7 @@ Complete API reference for the Insult Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'insult_sdk'
+require_relative 'Insult_sdk'
 
 client = InsultSDK.new(options)
 ```
@@ -108,7 +108,7 @@ adjective = client.Adjective
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Adjective.load({ "id" => "adjective_id" })
+result = client.Adjective.load()
 ```
 
 ### Common Methods
@@ -154,7 +154,7 @@ adjectiveformat = client.Adjectiveformat
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Adjectiveformat.load({ "id" => "adjectiveformat_id" })
+result = client.Adjectiveformat.load()
 ```
 
 ### Common Methods
@@ -200,7 +200,7 @@ insult = client.Insult
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Insult.load({ "id" => "insult_id" })
+result = client.Insult.load()
 ```
 
 ### Common Methods
@@ -246,7 +246,7 @@ insultformat = client.Insultformat
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Insultformat.load({ "id" => "insultformat_id" })
+result = client.Insultformat.load()
 ```
 
 ### Common Methods

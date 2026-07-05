@@ -102,7 +102,7 @@ adjective = client.Adjective()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Adjective().load({"id": "adjective_id"})
+result = client.Adjective().load()
 ```
 
 ### Common Methods
@@ -147,7 +147,7 @@ adjectiveformat = client.Adjectiveformat()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Adjectiveformat().load({"id": "adjectiveformat_id"})
+result = client.Adjectiveformat().load()
 ```
 
 ### Common Methods
@@ -192,7 +192,7 @@ insult = client.Insult()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Insult().load({"id": "insult_id"})
+result = client.Insult().load()
 ```
 
 ### Common Methods
@@ -237,7 +237,7 @@ insultformat = client.Insultformat()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Insultformat().load({"id": "insultformat_id"})
+result = client.Insultformat().load()
 ```
 
 ### Common Methods

@@ -8,7 +8,8 @@
 export interface Adjective {
 }
 
-export type AdjectiveLoadMatch = Partial<Adjective>
+export interface AdjectiveLoadMatch {
+}
 
 export interface Adjectiveformat {
 }
@@ -21,7 +22,8 @@ export interface AdjectiveformatLoadMatch {
 export interface Insult {
 }
 
-export type InsultLoadMatch = Partial<Insult>
+export interface InsultLoadMatch {
+}
 
 export interface Insultformat {
 }

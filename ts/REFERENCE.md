@@ -155,7 +155,7 @@ const adjective = client.Adjective()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Adjective().load({ id: 'adjective_id' })
+const result = await client.Adjective().load()
 ```
 
 ### Common Methods
@@ -199,7 +199,7 @@ const adjectiveformat = client.Adjectiveformat()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Adjectiveformat().load({ id: 'adjectiveformat_id' })
+const result = await client.Adjectiveformat().load()
 ```
 
 ### Common Methods
@@ -243,7 +243,7 @@ const insult = client.Insult()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Insult().load({ id: 'insult_id' })
+const result = await client.Insult().load()
 ```
 
 ### Common Methods
@@ -287,7 +287,7 @@ const insultformat = client.Insultformat()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Insultformat().load({ id: 'insultformat_id' })
+const result = await client.Insultformat().load()
 ```
 
 ### Common Methods

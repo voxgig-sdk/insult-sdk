@@ -105,7 +105,7 @@ local adjective = client:Adjective(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Adjective():load({ id = "adjective_id" })
+local result, err = client:Adjective():load()
 ```
 
 ### Common Methods
@@ -151,7 +151,7 @@ local adjectiveformat = client:Adjectiveformat(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Adjectiveformat():load({ id = "adjectiveformat_id" })
+local result, err = client:Adjectiveformat():load()
 ```
 
 ### Common Methods
@@ -197,7 +197,7 @@ local insult = client:Insult(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Insult():load({ id = "insult_id" })
+local result, err = client:Insult():load()
 ```
 
 ### Common Methods
@@ -243,7 +243,7 @@ local insultformat = client:Insultformat(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Insultformat():load({ id = "insultformat_id" })
+local result, err = client:Insultformat():load()
 ```
 
 ### Common Methods

@@ -12,8 +12,7 @@ import "encoding/json"
 type Adjective struct {
 }
 
-// AdjectiveLoadMatch mirrors the adjective fields as an all-optional match
-// filter (Go analog of Partial<Adjective>).
+// AdjectiveLoadMatch is the typed request payload for Adjective.LoadTyped.
 type AdjectiveLoadMatch struct {
 }
 
@@ -31,8 +30,7 @@ type AdjectiveformatLoadMatch struct {
 type Insult struct {
 }
 
-// InsultLoadMatch mirrors the insult fields as an all-optional match
-// filter (Go analog of Partial<Insult>).
+// InsultLoadMatch is the typed request payload for Insult.LoadTyped.
 type InsultLoadMatch struct {
 }
 

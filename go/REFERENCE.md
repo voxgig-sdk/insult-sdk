@@ -112,7 +112,7 @@ adjective := client.Adjective(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Adjective(nil).Load(map[string]any{"id": "adjective_id"}, nil)
+result, err := client.Adjective(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -152,7 +152,7 @@ adjectiveformat := client.Adjectiveformat(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Adjectiveformat(nil).Load(map[string]any{"id": "adjectiveformat_id"}, nil)
+result, err := client.Adjectiveformat(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -192,7 +192,7 @@ insult := client.Insult(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Insult(nil).Load(map[string]any{"id": "insult_id"}, nil)
+result, err := client.Insult(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -232,7 +232,7 @@ insultformat := client.Insultformat(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Insultformat(nil).Load(map[string]any{"id": "insultformat_id"}, nil)
+result, err := client.Insultformat(nil).Load(nil, nil)
 ```
 
 ### Common Methods

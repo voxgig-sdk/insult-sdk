@@ -12,7 +12,7 @@
 class Adjective
 end
 
-# Match filter for Adjective#load (any subset of Adjective fields).
+# Request payload for Adjective#load.
 class AdjectiveLoadMatch
 end
 
@@ -37,7 +37,7 @@ AdjectiveformatLoadMatch = Struct.new(
 class Insult
 end
 
-# Match filter for Insult#load (any subset of Insult fields).
+# Request payload for Insult#load.
 class InsultLoadMatch
 end
 

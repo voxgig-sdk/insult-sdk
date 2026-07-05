@@ -57,11 +57,11 @@ Create a new `InsultEntity` instance. Pass `null` for no initial data.
 
 Create a new `InsultformatEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): InsultUtility`
 
 Return a copy of the SDK utility object.
 
@@ -107,24 +107,24 @@ $adjective = $client->Adjective();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Adjective()->load(["id" => "adjective_id"]);
+$result = $client->Adjective()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -133,7 +133,7 @@ Set the entity match criteria.
 Create a new `AdjectiveEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -153,24 +153,24 @@ $adjectiveformat = $client->Adjectiveformat();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Adjectiveformat()->load(["id" => "adjectiveformat_id"]);
+$result = $client->Adjectiveformat()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -179,7 +179,7 @@ Set the entity match criteria.
 Create a new `AdjectiveformatEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -199,24 +199,24 @@ $insult = $client->Insult();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Insult()->load(["id" => "insult_id"]);
+$result = $client->Insult()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -225,7 +225,7 @@ Set the entity match criteria.
 Create a new `InsultEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -245,24 +245,24 @@ $insultformat = $client->Insultformat();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Insultformat()->load(["id" => "insultformat_id"]);
+$result = $client->Insultformat()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -271,7 +271,7 @@ Set the entity match criteria.
 Create a new `InsultformatEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

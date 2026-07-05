@@ -221,25 +221,25 @@ class InsultSDK:
 
 
     def Adjective(self, data=None) -> "AdjectiveEntity":
-        """Entity factory: client.Adjective().list({}) / client.Adjective().load({"id": ...})."""
+        """Entity factory: client.Adjective().list() / client.Adjective().load({"id": ...})."""
         from entity.adjective_entity import AdjectiveEntity
         return AdjectiveEntity(self, data)
 
 
     def Adjectiveformat(self, data=None) -> "AdjectiveformatEntity":
-        """Entity factory: client.Adjectiveformat().list({}) / client.Adjectiveformat().load({"id": ...})."""
+        """Entity factory: client.Adjectiveformat().list() / client.Adjectiveformat().load({"id": ...})."""
         from entity.adjectiveformat_entity import AdjectiveformatEntity
         return AdjectiveformatEntity(self, data)
 
 
     def Insult(self, data=None) -> "InsultEntity":
-        """Entity factory: client.Insult().list({}) / client.Insult().load({"id": ...})."""
+        """Entity factory: client.Insult().list() / client.Insult().load({"id": ...})."""
         from entity.insult_entity import InsultEntity
         return InsultEntity(self, data)
 
 
     def Insultformat(self, data=None) -> "InsultformatEntity":
-        """Entity factory: client.Insultformat().list({}) / client.Insultformat().load({"id": ...})."""
+        """Entity factory: client.Insultformat().list() / client.Insultformat().load({"id": ...})."""
         from entity.insultformat_entity import InsultformatEntity
         return InsultformatEntity(self, data)
 
