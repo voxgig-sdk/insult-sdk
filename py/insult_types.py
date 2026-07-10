@@ -28,8 +28,11 @@ class Adjectiveformat(TypedDict):
     pass
 
 
-class AdjectiveformatLoadMatch(TypedDict):
+class AdjectiveformatLoadMatchRequired(TypedDict):
     format: str
+
+
+class AdjectiveformatLoadMatch(AdjectiveformatLoadMatchRequired, total=False):
     lang: str
 
 
@@ -45,6 +48,9 @@ class Insultformat(TypedDict):
     pass
 
 
-class InsultformatLoadMatch(TypedDict):
+class InsultformatLoadMatchRequired(TypedDict):
     format: str
+
+
+class InsultformatLoadMatch(InsultformatLoadMatchRequired, total=False):
     lang: str

@@ -332,7 +332,7 @@ Create an instance: `adjectiveformat := client.Adjectiveformat(nil)`
 #### Example: Load
 
 ```go
-adjectiveformat, err := client.Adjectiveformat(nil).Load(nil, nil)
+adjectiveformat, err := client.Adjectiveformat(nil).Load(map[string]any{"format": "format"}, nil)
 if err != nil {
     panic(err)
 }
@@ -374,7 +374,7 @@ Create an instance: `insultformat := client.Insultformat(nil)`
 #### Example: Load
 
 ```go
-insultformat, err := client.Insultformat(nil).Load(nil, nil)
+insultformat, err := client.Insultformat(nil).Load(map[string]any{"format": "format"}, nil)
 if err != nil {
     panic(err)
 }

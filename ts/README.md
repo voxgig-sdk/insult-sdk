@@ -354,7 +354,7 @@ Create an instance: `const adjectiveformat = client.Adjectiveformat()`
 #### Example: Load
 
 ```ts
-const adjectiveformat = await client.Adjectiveformat().load()
+const adjectiveformat = await client.Adjectiveformat().load({ format: 'format' })
 ```
 
 
@@ -388,7 +388,7 @@ Create an instance: `const insultformat = client.Insultformat()`
 #### Example: Load
 
 ```ts
-const insultformat = await client.Insultformat().load()
+const insultformat = await client.Insultformat().load({ format: 'format' })
 ```
 
 

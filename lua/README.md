@@ -295,7 +295,7 @@ Create an instance: `local adjectiveformat = client:Adjectiveformat(nil)`
 #### Example: Load
 
 ```lua
-local adjectiveformat, err = client:Adjectiveformat():load()
+local adjectiveformat, err = client:Adjectiveformat():load({ format = "format" })
 ```
 
 
@@ -329,7 +329,7 @@ Create an instance: `local insultformat = client:Insultformat(nil)`
 #### Example: Load
 
 ```lua
-local insultformat, err = client:Insultformat():load()
+local insultformat, err = client:Insultformat():load({ format = "format" })
 ```
 
 

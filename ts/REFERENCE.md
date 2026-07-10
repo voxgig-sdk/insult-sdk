@@ -199,7 +199,7 @@ const adjectiveformat = client.Adjectiveformat()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Adjectiveformat().load()
+const result = await client.Adjectiveformat().load({ format: 'format' })
 ```
 
 ### Common Methods
@@ -287,7 +287,7 @@ const insultformat = client.Insultformat()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Insultformat().load()
+const result = await client.Insultformat().load({ format: 'format' })
 ```
 
 ### Common Methods

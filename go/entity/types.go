@@ -23,7 +23,7 @@ type Adjectiveformat struct {
 // AdjectiveformatLoadMatch is the typed request payload for Adjectiveformat.LoadTyped.
 type AdjectiveformatLoadMatch struct {
 	Format string `json:"format"`
-	Lang string `json:"lang"`
+	Lang *string `json:"lang,omitempty"`
 }
 
 // Insult is the typed data model for the insult entity.
@@ -41,7 +41,7 @@ type Insultformat struct {
 // InsultformatLoadMatch is the typed request payload for Insultformat.LoadTyped.
 type InsultformatLoadMatch struct {
 	Format string `json:"format"`
-	Lang string `json:"lang"`
+	Lang *string `json:"lang,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

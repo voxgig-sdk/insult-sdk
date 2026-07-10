@@ -26,7 +26,7 @@ end
 #   @return [String]
 #
 # @!attribute [rw] lang
-#   @return [String]
+#   @return [String, nil]
 AdjectiveformatLoadMatch = Struct.new(
   :format,
   :lang,
@@ -51,7 +51,7 @@ end
 #   @return [String]
 #
 # @!attribute [rw] lang
-#   @return [String]
+#   @return [String, nil]
 InsultformatLoadMatch = Struct.new(
   :format,
   :lang,

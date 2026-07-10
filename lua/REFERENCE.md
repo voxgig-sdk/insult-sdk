@@ -151,7 +151,7 @@ local adjectiveformat = client:Adjectiveformat(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Adjectiveformat():load()
+local result, err = client:Adjectiveformat():load({ format = "format" })
 ```
 
 ### Common Methods
@@ -243,7 +243,7 @@ local insultformat = client:Insultformat(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Insultformat():load()
+local result, err = client:Insultformat():load({ format = "format" })
 ```
 
 ### Common Methods

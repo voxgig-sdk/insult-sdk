@@ -16,7 +16,7 @@ export interface Adjectiveformat {
 
 export interface AdjectiveformatLoadMatch {
   format: string
-  lang: string
+  lang?: string
 }
 
 export interface Insult {
@@ -30,6 +30,6 @@ export interface Insultformat {
 
 export interface InsultformatLoadMatch {
   format: string
-  lang: string
+  lang?: string
 }
 

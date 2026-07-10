@@ -31,7 +31,7 @@ class Adjectiveformat
 class AdjectiveformatLoadMatch
 {
     public string $format;
-    public string $lang;
+    public ?string $lang = null;
 }
 
 /** Insult entity data model. */
@@ -53,6 +53,6 @@ class Insultformat
 class InsultformatLoadMatch
 {
     public string $format;
-    public string $lang;
+    public ?string $lang = null;
 }
 

@@ -153,7 +153,7 @@ $adjectiveformat = $client->Adjectiveformat();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Adjectiveformat()->load();
+$result = $client->Adjectiveformat()->load(["format" => "format"]);
 ```
 
 ### Common Methods
@@ -245,7 +245,7 @@ $insultformat = $client->Insultformat();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Insultformat()->load();
+$result = $client->Insultformat()->load(["format" => "format"]);
 ```
 
 ### Common Methods

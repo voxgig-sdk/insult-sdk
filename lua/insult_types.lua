@@ -14,7 +14,7 @@
 
 ---@class AdjectiveformatLoadMatch
 ---@field format string
----@field lang string
+---@field lang? string
 
 ---@class Insult
 
@@ -24,7 +24,7 @@
 
 ---@class InsultformatLoadMatch
 ---@field format string
----@field lang string
+---@field lang? string
 
 local M = {}
 

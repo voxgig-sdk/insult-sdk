@@ -316,7 +316,7 @@ Create an instance: `$adjectiveformat = $client->Adjectiveformat();`
 
 ```php
 // load() returns the bare Adjectiveformat record (throws on error).
-$adjectiveformat = $client->Adjectiveformat()->load();
+$adjectiveformat = $client->Adjectiveformat()->load(["format" => "format"]);
 ```
 
 
@@ -352,7 +352,7 @@ Create an instance: `$insultformat = $client->Insultformat();`
 
 ```php
 // load() returns the bare Insultformat record (throws on error).
-$insultformat = $client->Insultformat()->load();
+$insultformat = $client->Insultformat()->load(["format" => "format"]);
 ```
 
 

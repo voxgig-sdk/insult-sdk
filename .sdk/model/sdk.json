@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -629,14 +626,17 @@
           "url": "https://insult.mattbas.org/api/"
         },
         "description": "The Insult API generates humorous and creative insults in various formats, allowing users to specify language and templates. It supports multiple languages, including English and corporate jargon, catering to different contexts and preferences.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://insult.mattbas.org/api"
           }
         ],
+        "summary": "The Insult API generates humorous and creative insults in various formats, allowing users to specify language and templates.",
         "title": "Insult API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://insult.mattbas.org"
       },
       "option": {},
       "target": {
@@ -689,6 +689,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -739,6 +742,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

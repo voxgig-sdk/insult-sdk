@@ -310,7 +310,7 @@ Create an instance: `adjectiveformat = client.Adjectiveformat()`
 #### Example: Load
 
 ```python
-adjectiveformat = client.Adjectiveformat().load()
+adjectiveformat = client.Adjectiveformat().load({"format": "format"})
 ```
 
 
@@ -344,7 +344,7 @@ Create an instance: `insultformat = client.Insultformat()`
 #### Example: Load
 
 ```python
-insultformat = client.Insultformat().load()
+insultformat = client.Insultformat().load({"format": "format"})
 ```
 
 

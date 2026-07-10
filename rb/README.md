@@ -306,7 +306,7 @@ Create an instance: `adjectiveformat = client.Adjectiveformat`
 
 ```ruby
 # load returns the bare Adjectiveformat record (raises on error).
-adjectiveformat = client.Adjectiveformat.load()
+adjectiveformat = client.Adjectiveformat.load({ "format" => "format" })
 ```
 
 
@@ -342,7 +342,7 @@ Create an instance: `insultformat = client.Insultformat`
 
 ```ruby
 # load returns the bare Insultformat record (raises on error).
-insultformat = client.Insultformat.load()
+insultformat = client.Insultformat.load({ "format" => "format" })
 ```
 
 

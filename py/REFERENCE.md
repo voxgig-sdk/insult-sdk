@@ -147,7 +147,7 @@ adjectiveformat = client.Adjectiveformat()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Adjectiveformat().load()
+result = client.Adjectiveformat().load({"format": "format"})
 ```
 
 ### Common Methods
@@ -237,7 +237,7 @@ insultformat = client.Insultformat()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Insultformat().load()
+result = client.Insultformat().load({"format": "format"})
 ```
 
 ### Common Methods

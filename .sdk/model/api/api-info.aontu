@@ -15,9 +15,9 @@ main: {
           url: "https://insult.mattbas.org/api"
         }
       ]
+      summary: "The Insult API generates humorous and creative insults in various formats, allowing users to specify language and templates."
       title: "Insult API"
       version: "1.0.0"
+      website: "https://insult.mattbas.org"
     }
   }
-}
-

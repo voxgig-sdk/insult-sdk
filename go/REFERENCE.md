@@ -103,6 +103,7 @@ same parameters as `Direct()`.
 
 ```go
 adjective := client.Adjective(nil)
+fmt.Println(adjective.GetName()) // "adjective"
 ```
 
 ### Operations
@@ -113,6 +114,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Adjective(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -143,6 +148,7 @@ Return the entity name.
 
 ```go
 adjectiveformat := client.Adjectiveformat(nil)
+fmt.Println(adjectiveformat.GetName()) // "adjectiveformat"
 ```
 
 ### Operations
@@ -152,7 +158,11 @@ adjectiveformat := client.Adjectiveformat(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Adjectiveformat(nil).Load(nil, nil)
+result, err := client.Adjectiveformat(nil).Load(map[string]any{"format": "format"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -183,6 +193,7 @@ Return the entity name.
 
 ```go
 insult := client.Insult(nil)
+fmt.Println(insult.GetName()) // "insult"
 ```
 
 ### Operations
@@ -193,6 +204,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Insult(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -223,6 +238,7 @@ Return the entity name.
 
 ```go
 insultformat := client.Insultformat(nil)
+fmt.Println(insultformat.GetName()) // "insultformat"
 ```
 
 ### Operations
@@ -232,7 +248,11 @@ insultformat := client.Insultformat(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Insultformat(nil).Load(nil, nil)
+result, err := client.Insultformat(nil).Load(map[string]any{"format": "format"}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
