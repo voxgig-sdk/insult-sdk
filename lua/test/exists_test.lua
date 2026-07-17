@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Insult SDK exists test
 
 local sdk = require("insult_sdk")
 
