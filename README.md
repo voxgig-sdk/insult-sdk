@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = InsultSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = InsultSDK.test({
+  entity: {
+    adjective: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const adjective = await client.Adjective().load()
-// adjective is a bare Adjective populated with mock data
+// adjective is the Adjective entity, populated with mock data
+// — call adjective.data() for the record itself
 console.log(adjective)
 ```
 
@@ -185,7 +194,7 @@ require_once 'insult_sdk.php';
 $client = new InsultSDK();
 
 
-// Load a specific adjective (returns the bare record; throws on error)
+// Load a specific adjective (returns the ENTITY; call data_get() for the record; throws on error)
 $adjective = $client->Adjective()->load();
 print_r($adjective);
 ```
@@ -213,7 +222,7 @@ require_relative "Insult_sdk"
 client = InsultSDK.new
 
 
-# Load a specific adjective (returns the bare record; raises on error)
+# Load a specific adjective (returns the ENTITY; call data_get for the record)
 adjective = client.Adjective.load()
 puts adjective
 ```
@@ -347,6 +356,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://insult.mattbas.org/api/](https://insult.mattbas.org/api/)
 

@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Insult',
   }
 
 
@@ -84,6 +84,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/adjective",
               "parts": [
@@ -142,6 +143,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/adjective.{format}",
               "parts": [
@@ -183,6 +185,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/{lang}/adjective.{format}",
               "parts": [
@@ -256,6 +259,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/insult",
               "parts": [
@@ -341,6 +345,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/insult.{format}",
               "parts": [
@@ -411,6 +416,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/{lang}/insult.{format}",
               "parts": [

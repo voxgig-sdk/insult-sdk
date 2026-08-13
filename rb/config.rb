@@ -49,6 +49,7 @@ module InsultConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/adjective",
                   "parts" => [
@@ -107,6 +108,7 @@ module InsultConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/adjective.{format}",
                   "parts" => [
@@ -148,6 +150,7 @@ module InsultConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/{lang}/adjective.{format}",
                   "parts" => [
@@ -221,6 +224,7 @@ module InsultConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/insult",
                   "parts" => [
@@ -306,6 +310,7 @@ module InsultConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/insult.{format}",
                   "parts" => [
@@ -376,6 +381,7 @@ module InsultConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/{lang}/insult.{format}",
                   "parts" => [

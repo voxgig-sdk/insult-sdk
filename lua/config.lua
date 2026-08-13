@@ -48,6 +48,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/adjective",
                 ["parts"] = {
@@ -106,6 +107,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/adjective.{format}",
                 ["parts"] = {
@@ -147,6 +149,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/{lang}/adjective.{format}",
                 ["parts"] = {
@@ -220,6 +223,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/insult",
                 ["parts"] = {
@@ -305,6 +309,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/insult.{format}",
                 ["parts"] = {
@@ -375,6 +380,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/{lang}/insult.{format}",
                 ["parts"] = {

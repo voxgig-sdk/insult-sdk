@@ -35,7 +35,7 @@ $client = new InsultSDK();
 
 ```php
 try {
-    // load() returns the bare Adjective record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Adjective record (throws on error).
     $adjective = $client->Adjective()->load();
     print_r($adjective);
 } catch (\Throwable $err) {
@@ -123,7 +123,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = InsultSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $adjective = $client->Adjective()->load();
 print_r($adjective);
 ```
@@ -225,7 +226,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -297,7 +298,7 @@ Create an instance: `$adjective = $client->Adjective();`
 #### Example: Load
 
 ```php
-// load() returns the bare Adjective record (throws on error).
+// load() returns the ENTITY — call data_get() for the Adjective record (throws on error).
 $adjective = $client->Adjective()->load();
 ```
 
@@ -315,7 +316,7 @@ Create an instance: `$adjectiveformat = $client->Adjectiveformat();`
 #### Example: Load
 
 ```php
-// load() returns the bare Adjectiveformat record (throws on error).
+// load() returns the ENTITY — call data_get() for the Adjectiveformat record (throws on error).
 $adjectiveformat = $client->Adjectiveformat()->load(["format" => "format"]);
 ```
 
@@ -333,7 +334,7 @@ Create an instance: `$insult = $client->Insult();`
 #### Example: Load
 
 ```php
-// load() returns the bare Insult record (throws on error).
+// load() returns the ENTITY — call data_get() for the Insult record (throws on error).
 $insult = $client->Insult()->load();
 ```
 
@@ -351,7 +352,7 @@ Create an instance: `$insultformat = $client->Insultformat();`
 #### Example: Load
 
 ```php
-// load() returns the bare Insultformat record (throws on error).
+// load() returns the ENTITY — call data_get() for the Insultformat record (throws on error).
 $insultformat = $client->Insultformat()->load(["format" => "format"]);
 ```
 

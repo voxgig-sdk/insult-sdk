@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import InsultSDK
-from core.error import InsultError
-from core.result import InsultResult
-from core.response import InsultResponse
-from core.spec import InsultSpec
-from feature.base_feature import InsultBaseFeature
+from projectname_sdk.core.error import InsultError
+from projectname_sdk.core.result import InsultResult
+from projectname_sdk.core.response import InsultResponse
+from projectname_sdk.core.spec import InsultSpec
+from projectname_sdk.feature.base_feature import InsultBaseFeature
 
 
 def _client():

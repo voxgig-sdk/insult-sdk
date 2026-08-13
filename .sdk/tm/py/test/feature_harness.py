@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import InsultControl
-from core.error import InsultError
-from core.result import InsultResult
-from core.spec import InsultSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import InsultControl
+from projectname_sdk.core.error import InsultError
+from projectname_sdk.core.result import InsultResult
+from projectname_sdk.core.spec import InsultSpec
 
 
 # True when this SDK was generated with the named feature.

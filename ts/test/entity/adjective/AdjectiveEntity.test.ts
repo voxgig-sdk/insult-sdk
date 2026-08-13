@@ -62,7 +62,7 @@ describe('AdjectiveEntity', async () => {
     // LOAD
     const adjective_ref01_ent = client.Adjective()
     const adjective_ref01_match_dt0: any = {}
-    const adjective_ref01_data_dt0 = await adjective_ref01_ent.load(adjective_ref01_match_dt0)
+    const adjective_ref01_data_dt0 = (await adjective_ref01_ent.load(adjective_ref01_match_dt0)).data()
     assert(null != adjective_ref01_data_dt0)
 
 

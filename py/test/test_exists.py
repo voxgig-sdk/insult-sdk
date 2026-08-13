@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Insult SDK exists test
 
 import pytest
 from insult_sdk import InsultSDK

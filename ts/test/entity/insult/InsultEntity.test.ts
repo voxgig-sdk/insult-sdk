@@ -62,7 +62,7 @@ describe('InsultEntity', async () => {
     // LOAD
     const insult_ref01_ent = client.Insult()
     const insult_ref01_match_dt0: any = {}
-    const insult_ref01_data_dt0 = await insult_ref01_ent.load(insult_ref01_match_dt0)
+    const insult_ref01_data_dt0 = (await insult_ref01_ent.load(insult_ref01_match_dt0)).data()
     assert(null != insult_ref01_data_dt0)
 
 

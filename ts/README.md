@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = InsultSDK.test()
 
 const adjective = await client.Adjective().load()
-// adjective is a bare entity populated with mock response data
+// adjective is the entity, populated with mock response data
+// — call adjective.data() for the record itself
 console.log(adjective)
 ```
 

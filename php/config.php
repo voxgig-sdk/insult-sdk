@@ -54,6 +54,7 @@ class InsultConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/adjective',
                   'parts' => [
@@ -112,6 +113,7 @@ class InsultConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/adjective.{format}',
                   'parts' => [
@@ -153,6 +155,7 @@ class InsultConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/{lang}/adjective.{format}',
                   'parts' => [
@@ -226,6 +229,7 @@ class InsultConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/insult',
                   'parts' => [
@@ -311,6 +315,7 @@ class InsultConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/insult.{format}',
                   'parts' => [
@@ -381,6 +386,7 @@ class InsultConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/{lang}/insult.{format}',
                   'parts' => [

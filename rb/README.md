@@ -34,7 +34,7 @@ client = InsultSDK.new
 
 ```ruby
 begin
-  # load returns the bare Adjective record (raises on error).
+  # load returns the ENTITY — call data_get for the Adjective record (raises on error).
   adjective = client.Adjective.load()
   puts adjective
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = InsultSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 adjective = client.Adjective.load()
 puts adjective
 ```
@@ -287,7 +288,7 @@ Create an instance: `adjective = client.Adjective`
 #### Example: Load
 
 ```ruby
-# load returns the bare Adjective record (raises on error).
+# load returns the ENTITY — call data_get for the Adjective record (raises on error).
 adjective = client.Adjective.load()
 ```
 
@@ -305,7 +306,7 @@ Create an instance: `adjectiveformat = client.Adjectiveformat`
 #### Example: Load
 
 ```ruby
-# load returns the bare Adjectiveformat record (raises on error).
+# load returns the ENTITY — call data_get for the Adjectiveformat record (raises on error).
 adjectiveformat = client.Adjectiveformat.load({ "format" => "format" })
 ```
 
@@ -323,7 +324,7 @@ Create an instance: `insult = client.Insult`
 #### Example: Load
 
 ```ruby
-# load returns the bare Insult record (raises on error).
+# load returns the ENTITY — call data_get for the Insult record (raises on error).
 insult = client.Insult.load()
 ```
 
@@ -341,7 +342,7 @@ Create an instance: `insultformat = client.Insultformat`
 #### Example: Load
 
 ```ruby
-# load returns the bare Insultformat record (raises on error).
+# load returns the ENTITY — call data_get for the Insultformat record (raises on error).
 insultformat = client.Insultformat.load({ "format" => "format" })
 ```
 

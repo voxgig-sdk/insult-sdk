@@ -6,9 +6,9 @@ import time
 
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from insult_sdk.utility.voxgig_struct import voxgig_struct as vs
 from insult_sdk import InsultSDK
-from core import helpers
+from insult_sdk.core import helpers
 
 _TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 from test import runner
